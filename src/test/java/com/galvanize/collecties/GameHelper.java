@@ -9,6 +9,7 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
@@ -25,12 +26,15 @@ public class GameHelper {
     public static void enableGameSleep() {
         testMode = false;
     }
-    public static void hookIntoRandom() {
-        hookIntoRandom("[]");
-    }
-    public static void hookIntoRandom(String sequence) {
+
+    public static void hookIntoRandom(List<Integer> sequence) {
         GameHelper.fakeRandom = new RandomPlayback();
         GameHelper.fakeRandom.setSequence(sequence);
+    }
+
+    public static void hookIntoRandom(Integer ...sequence) {
+        GameHelper.fakeRandom = new RandomPlayback();
+        GameHelper.fakeRandom.setSequence(Arrays.asList(sequence));
     }
 
     public static String runGameWithInput(String ...input) {

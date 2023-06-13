@@ -75,7 +75,8 @@ public class GameTests {
         // 10001 - Random number given to first Collectie
         // 51 - Exploring goes to findConsumable logic
         // 0 - Finds first Consumable in this BIOME
-        hookIntoRandom("[4, 10001, 51, 0]");
+        List<Integer> numberSequence = new ArrayList<>(Arrays.asList(4, 10001, 51, 0));
+        hookIntoRandom(numberSequence);
         disableGameSleep();
         String output = runGameWithInput("n", "2", "4");
         enableGameSleep();
@@ -91,7 +92,7 @@ public class GameTests {
         // 0 - Finds first Collectie in this BIOME
         // 10002 - Random number given to cloned Collectie
         // 11 - Roll below 50 for Rextor to win
-        hookIntoRandom("[11, 10001, 1, 0, 10002, 11]");
+        hookIntoRandom(11, 10001, 1, 0, 10002, 11);
         disableGameSleep();
         String output = runGameWithInput("n", "2", "1", "n", "4");
         enableGameSleep();
@@ -108,7 +109,7 @@ public class GameTests {
         // 10002 - Random number given to cloned Collectie
         // 51 - our Rextore misses
         // 51 - other Rextore misses
-        hookIntoRandom("[11, 10001, 1, 0, 10002, 51, 51]");
+        hookIntoRandom(11, 10001, 1, 0, 10002, 51, 51);
         disableGameSleep();
         String output = runGameWithInput("n", "2", "1", "4");
         enableGameSleep();
@@ -126,7 +127,7 @@ public class GameTests {
         // 10002 - Random number given to cloned Collectie
         // 51 - our Rextore misses
         // 1 - other Rextore hits
-        hookIntoRandom("[11, 10001, 1, 0, 10002, 51, 1]");
+        hookIntoRandom(11, 10001, 1, 0, 10002, 51, 1);
         disableGameSleep();
         String output = runGameWithInput("n", "2", "1", "4");
         enableGameSleep();

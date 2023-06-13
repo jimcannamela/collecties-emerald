@@ -35,14 +35,7 @@ public class RandomPlayback extends Random {
         return genratedValues.toString();
     }
 
-    public void setSequence(String sequence) {
-        String[] values = sequence.substring(1, sequence.length()-1).split(", ");
-        if(values.length < 1 || values[0].length() < 1) {
-            return;
-        }
-        for (String value :
-                values) {
-            this.sequence.add(Integer.parseInt(value));
-        }
+    public void setSequence(List<Integer> sequence) {
+        this.sequence = new ArrayList<>(sequence);
     }
 }

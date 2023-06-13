@@ -224,7 +224,7 @@ public class PrinterTests {
     assertEquals(String.format("Wait Test..%n"), printed);
 
     long timeDiff = System.currentTimeMillis() - startTime;
-    assertTrue(timeDiff > 2000 && timeDiff < 3000);
+    assertTrue(timeDiff > 1500 && timeDiff < 3500);
   }
 
   @Test

@@ -1,6 +1,7 @@
 package com.galvanize.collecties;
 
 import com.galvanize.collecties.Game;
+import com.galvanize.collecties.collectie.utils.RandomPlayback;
 import com.galvanize.collecties.utils.terminal.Printer;
 import com.galvanize.collecties.utils.terminal.Prompt;
 
@@ -8,12 +9,15 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
 public class GameHelper {
     private static boolean testMode = false;
+    private static RandomPlayback fakeRandom;
+    private static Random originalRandom;
 
     public static void disableGameSleep() {
         testMode = true;
@@ -21,6 +25,16 @@ public class GameHelper {
 
     public static void enableGameSleep() {
         testMode = false;
+    }
+
+    public static void hookIntoRandom(List<Integer> sequence) {
+        GameHelper.fakeRandom = new RandomPlayback();
+        GameHelper.fakeRandom.setSequence(sequence);
+    }
+
+    public static void hookIntoRandom(Integer ...sequence) {
+        GameHelper.fakeRandom = new RandomPlayback();
+        GameHelper.fakeRandom.setSequence(Arrays.asList(sequence));
     }
 
     public static String runGameWithInput(String ...input) {
@@ -39,11 +53,20 @@ public class GameHelper {
         Printer printer = new Printer(printStream);
         Scanner scanner = new Scanner(inputStream);
         Prompt prompt = new Prompt(scanner, printer);
-        Game game = new Game(printer, prompt);
+        if(GameHelper.fakeRandom != null) {
+            GameHelper.originalRandom = Game.randogen;
+            Game.randogen = fakeRandom;
+        }
         if(testMode) {
             printer.disableSleep();
         }
+        Game game = new Game(printer, prompt);
         game.start();
+        if(GameHelper.fakeRandom != null) {
+            System.out.println(fakeRandom.getGeneratedValues());
+            Game.randogen = GameHelper.originalRandom;
+            GameHelper.fakeRandom = null;
+        }
         return outputStream.toString();
     }
 

@@ -142,6 +142,7 @@ public class CollectieManager {
     for(int i = 0; i < collection.size(); i++) {
       Collectie c = collection.get(i);
 
+      printer.print("Collectie Collection");
       printer.print(
         "[%d] %s (%s)",
         i + 1,
@@ -159,6 +160,9 @@ public class CollectieManager {
    * the choices
    */
   private void printConsumableChoices() {
+    if(consumables.size() < 1) {
+      printer.print("No consumables available");
+    }
     printer.formatAsList(
       consumables
         .stream()

@@ -70,16 +70,17 @@ public class GameTests {
 
     @Test
     public void collectConsumable() {
-        // 1 - Taiga is picked as BIOME
+        // 4 - PLAINS is picked as BIOME
+        //     This BIOME has to be one with a Collectie in it on Game start
         // 10001 - Random number given to first Collectie
         // 51 - Exploring goes to findConsumable logic
         // 0 - Finds first Consumable in this BIOME
-        hookIntoRandom("[1, 10001, 51, 0]");
+        hookIntoRandom("[4, 10001, 51, 0]");
         disableGameSleep();
         String output = runGameWithInput("n", "2", "4");
         enableGameSleep();
         displayOutputLines(output);
-        Assertions.assertEquals("You found a Questionable Mushroom while exploring.", output.split(System.lineSeparator())[14]);
+        Assertions.assertEquals("You found a Rextore Claws Energy Drink while exploring.", output.split(System.lineSeparator())[14]);
     }
 
     @Test

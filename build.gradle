@@ -34,21 +34,11 @@ run {
 jar {
     manifest {
         attributes(
-                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+//                'Class-Path': configurations.compile.collect { it.isDirectory() ? it : zipTree(it) },
                 'Main-Class': 'com.galvanize.collecties.Game'
         )
     }
-}
-
-// Use this build a JAR that includes all the necessary dependencies
-// ./gradlew clean buildWithDeps && java -jar build/libs/Collecites_Base-withdeps-1.0-SNAPSHOT.jar
-task buildWithDeps(type: Jar) {
-    manifest {
-        attributes(
-                'Main-Class': 'com.galvanize.collecties.Game'
-        )
+    from {
+            configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
     }
-    baseName = project.name + '-withdeps'
-    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
-    with jar
 }

@@ -34,7 +34,6 @@ run {
 jar {
     manifest {
         attributes(
-//                'Class-Path': configurations.compile.collect { it.isDirectory() ? it : zipTree(it) },
                 'Main-Class': 'com.galvanize.collecties.Game'
         )
     }

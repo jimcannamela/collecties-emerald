@@ -31,7 +31,7 @@ public class RibsTests {
     }
 
     @Test
-    public void shouldShowSliceCountInName() {
+    public void shouldShowRibCountInName() {
         assertTrue(ribs.getName().contains("(7)"));
         ribs.consume();
         assertTrue(ribs.getName().contains("(6)"));

@@ -26,7 +26,7 @@ public class SharkTests {
     }
 
     @Test
-    void shouldBeRextoreSpecies() {
+    void shouldBeSharkSpecies() {
         assertEquals("Shark", shark.getSpecies());
     }
 

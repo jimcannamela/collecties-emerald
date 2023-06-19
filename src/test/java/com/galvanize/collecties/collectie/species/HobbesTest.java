@@ -66,7 +66,7 @@ public class HobbesTest {
 
         @Test
         public void shouldGetNewHobbesOnClone() {
-            Hobbes clone = (Hobbes) hobbes.clone();
+            Hobbes clone = hobbes.clone();
             assertNotEquals(clone, hobbes);
         }
 

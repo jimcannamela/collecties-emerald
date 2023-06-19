@@ -7,5 +7,6 @@ public enum CollectieType {
   DINOSAUR,
   GHOST,
   ELEMENTAL,
-  SPECIAL
+  SPECIAL,
+  HOMICIDAL_JUNGLE_CAT
 }

@@ -51,24 +51,24 @@ public class BunzTests {
     }
 
     @Test
-    public void shouldPreferVolcanicBiomes() {
+    public void shouldPreferBeachBiomes() {
         assertEquals(Biome.BEACH, testDog.getPreferredBiome());
     }
 
     @Test
-    public void shouldHave10AttackPower() {
-        assertEquals(10, testDog.performAttack());
+    public void shouldHave2AttackPower() {
+        assertEquals(2, testDog.performAttack());
     }
 
     @Test
-    public void shouldSuccessfullyDefend50pOfTheTime() {
+    public void shouldSuccessfullyDefend80pOfTheTime() {
         int wins =  0;
         for(int i = 0; i < 1000; i++) {
             if(testDog.defend(0)) wins++;
         }
 
         System.out.println("Wins: " + wins);
-        assertTrue(wins > 450 && wins < 550);
+        assertTrue(wins > 750 && wins < 900);
     }
 
     @Test

@@ -41,13 +41,13 @@ public class Bunz extends Collectie {
 
     @Override
     public int performAttack() {
-        return 10;
+        return 2;
     }
 
     @Override
     public boolean defend(int attackStrength) {
         if(Game.TEST_MODE) return false;
-        return Game.randogen.nextInt(100) > 50;
+        return Game.randogen.nextInt(100) > 20;
     }
 
     @Override

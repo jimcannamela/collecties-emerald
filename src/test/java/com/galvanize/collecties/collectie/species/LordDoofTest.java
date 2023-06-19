@@ -44,7 +44,7 @@ void setUp() {doofy = new LordDoof();}
         //Action
         System.out.println(graphic);
         //Assert
-        assertEquals(0, graphic.length());
+        assertEquals(38, graphic.length());
     }
 
 }

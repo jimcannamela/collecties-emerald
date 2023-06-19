@@ -29,39 +29,39 @@ public class BunzTests {
     }
 
     @Test
-    public void shouldBeBunzSpecies() {
+    public void testGetSpecies() {
         assertEquals("Bunz", testDog.getSpecies());
     }
 
     @Test
-    public void shouldBeTypeSnack() {
+    public void testGetType() {
         Assertions.assertEquals(CollectieType.SNACK, testDog.getType());
     }
 
     @Test
-    public void shouldProvideAGraphic() {
+    public void testGetGraphic() {
         String graphic = testDog.getGraphic();
         System.out.println(graphic);
         assertNotEquals(0, graphic.length());
     }
 
     @Test
-    public void shouldHaveTheCorrectSound() {
+    public void testSpeak() {
         assertEquals("NO SAUERKRAUT", testDog.speak());
     }
 
     @Test
-    public void shouldPreferBeachBiomes() {
+    public void testGetPreferredBiome() {
         assertEquals(Biome.BEACH, testDog.getPreferredBiome());
     }
 
     @Test
-    public void shouldHave2AttackPower() {
+    public void testPerformAttack_TwoAttackPower() {
         assertEquals(2, testDog.performAttack());
     }
 
     @Test
-    public void shouldSuccessfullyDefend80pOfTheTime() {
+    public void testDefend_SuccessfullyDefend80PercentOfTheTime() {
         int wins =  0;
         for(int i = 0; i < 1000; i++) {
             if(testDog.defend(0)) wins++;
@@ -72,7 +72,7 @@ public class BunzTests {
     }
 
     @Test
-    public void shouldNewBunzOnClone() {
+    public void testClone_CreateNewInstanceOfBunz() {
         Bunz clone = testDog.clone();
         assertNotEquals(clone, testDog);
     }

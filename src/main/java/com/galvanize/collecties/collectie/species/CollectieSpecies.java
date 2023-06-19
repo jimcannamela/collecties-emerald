@@ -17,7 +17,9 @@ public enum CollectieSpecies {
   // SPECIES(new Species()) / KEY(ReferenceValue)
   REXTORE(new Rextore()),
   DODUD(new Dodud()),
-  HOBBES(new Hobbes());
+  HOBBES(new Hobbes()),
+  BUNZ(new Bunz());
+
   /*
    * Enums can actually have a constructor
    * and instance data/methods. In this case

@@ -1,6 +1,7 @@
 package com.galvanize.collecties.collectie.species;
 
 import com.galvanize.collecties.Biome;
+import com.galvanize.collecties.collectie.Collectie;
 import com.galvanize.collecties.collectie.CollectieType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -9,71 +10,41 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@DisplayName("Collectie: Lord Doof")
 public class LordDoofTest {
+private LordDoof doofy;
 
+@BeforeEach
+void setUp() {doofy = new LordDoof();}
 
-//import static org.junit.jupiter.api.Assertions.*;
-//
-//    @DisplayName("Collectie: Dodud")
-//    public class DodudTests {
-//
-//        Dodud duddy;
-//
-//        @BeforeEach
-//        public void testSetup() {
-//            duddy = new Dodud();
-//        }
-//
-//        @Test
-//        public void shouldBeAbleToRename() {
-//            String newName = "Duddy";
-//            duddy.setName(newName);
-//            assertEquals(newName, duddy.getName());
-//        }
-//
-//        @Test
-//        public void shouldBeRextoreSpecies() {
-//            assertEquals("Dodud", duddy.getSpecies());
-//        }
-//
-//        @Test
-//        public void shouldBeTypeDinosaur() {
-//            Assertions.assertEquals(CollectieType.SPECIAL, duddy.getType());
-//        }
-//
-//        @Test
-//        public void shouldProvideAGraphic() {
-//            String graphic = duddy.getGraphic();
-//            System.out.println(graphic);
-//            assertNotEquals(0, graphic.length());
-//        }
-//
-//        @Test
-//        public void shouldHaveTheCorrectSound() {
-//            assertEquals("DOOOOOO-UP", duddy.speak());
-//        }
-//
-//        @Test
-//        public void shouldPreferVolcanicBiomes() {
-//            assertEquals(Biome.PLAINS, duddy.getPreferredBiome());
-//        }
-//
-//        @Test
-//        public void shouldHaveZeroAttackPower() {
-//            assertEquals(0, duddy.performAttack());
-//        }
-//
-//        @Test
-//        public void shouldAlwaysLoseDefense() {
-//            assertFalse(duddy.defend(0));
-//            assertFalse(duddy.defend(0));
-//            assertFalse(duddy.defend(0));
-//        }
-//
-//        @Test
-//        public void shouldGetNewDodudOnClone() {
-//            Dodud clone = duddy.clone();
-//            assertNotEquals(clone, duddy);
-//        }
+    @Test
+     void shouldBeAbleToRename() {
+        //Arrange
+        String newName = "Doofy";
+        //Action
+        doofy.setNewName(newName);
+        //Assert
+        assertEquals(newName, doofy.getNewName());
+    }
+
+    @Test
+    void shouldBeDoofySpecies() {
+    //assert
+        assertEquals("LordDoof", doofy.getSpecies());
+    }
+    @Test
+    void shouldBeSteelType(){
+    //assert
+        assertEquals(CollectieType.STEEL, doofy.getType());
+    }
+    @Test
+    void shouldProvideAGraphic() {
+        //Arrange
+        String graphic = doofy.getGraphic();
+        //Action
+        System.out.println(graphic);
+        //Assert
+        assertEquals(0, graphic.length());
+    }
 
 }

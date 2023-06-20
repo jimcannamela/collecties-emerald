@@ -155,4 +155,40 @@ public class GameTests {
         displayOutputLines(output);
         Assertions.assertEquals("Your protector is unconscious so you GTFO!!", output.split("\\r?\\n")[93]);
     }
+    @Test
+    public void usingRedDodudRevivesCollectie(){
+        // 11 - VOLCANIC is picked as BIOME
+        // 10001 - Random number given to first Collectie
+        // 1 - Exploring goes to encounter logic
+        // 0 - Finds first Collectie in this BIOME
+        // 10002 - Random number given to cloned Collectie
+        // 51 - our Rextore misses
+        // 1 - other Rextore hits
+        // 51 - Exploring finds item
+        // 8 - Finds RedDodud
+        hookIntoRandom(11, 10001, 1, 0, 10002, 51, 1, 51, 8);
+        disableGameSleep();
+        String output = runGameWithInput("n", "2", "1","2","3","3","1","1","6","4");
+        enableGameSleep();
+        displayOutputLines(output);
+        Assertions.assertEquals("You used the RedDodud and revived the Collectie", output.split("\\r?\\n")[81]);
+    }
+    @Test
+    public void usingRedDodudOnConsciousCollectieGivesMessage(){
+        // 11 - VOLCANIC is picked as BIOME
+        // 10001 - Random number given to first Collectie
+        // 1 - Exploring goes to encounter logic
+        // 0 - Finds first Collectie in this BIOME
+        // 10002 - Random number given to cloned Collectie
+        // 51 - our Rextore misses
+        // 51 - other Rextore misses
+        // 51 - Exploring finds item
+        // 8 - Finds RedDodud
+        hookIntoRandom(11, 10001, 1, 0, 10002, 51, 51, 51, 8);
+        disableGameSleep();
+        String output = runGameWithInput("n", "2", "1","2","3","3","1","1","6","4");
+        enableGameSleep();
+        displayOutputLines(output);
+        Assertions.assertEquals("You used the RedDodud, but your Collectie was already conscious", output.split("\\r?\\n")[81]);
+    }
 }

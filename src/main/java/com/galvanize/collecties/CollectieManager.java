@@ -1,6 +1,7 @@
 package com.galvanize.collecties;
 
 import com.galvanize.collecties.collectie.Collectie;
+import com.galvanize.collecties.collectie.CollectieStatus;
 import com.galvanize.collecties.consumable.Consumable;
 import com.galvanize.collecties.utils.terminal.Printer;
 import com.galvanize.collecties.utils.terminal.Prompt;
@@ -238,6 +239,15 @@ public class CollectieManager {
 
     // Consumable.consume() returns true if the it was finished on that call
     if(consumable.consume()) {
+      //revive the Collectie if the player uses the RedDodud
+      if(consumable.getClass().getSimpleName().equals("RedDodud")){
+        if(collectieToFeed.getStatus().equals(CollectieStatus.UNCONSCIOUS)){
+          printer.print("You used the RedDodud and revived the Collectie");
+        } else {
+          printer.print("You used the RedDodud, but your Collectie was already conscious");
+        }
+        collectieToFeed.setStatus(CollectieStatus.CONSCIOUS);
+      }
       printer.multiline(
         "Looks like %s consumed all of the %s.",
         "It has been removed from your consumables list."

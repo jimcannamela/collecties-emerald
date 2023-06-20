@@ -8,5 +8,6 @@ public enum CollectieType {
   GHOST,
   ELEMENTAL,
   SPECIAL,
-  SNACK
+  SNACK,
+  FAIRY;
 }

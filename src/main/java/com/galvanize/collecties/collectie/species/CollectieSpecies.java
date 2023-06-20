@@ -17,6 +17,7 @@ public enum CollectieSpecies {
   // SPECIES(new Species()) / KEY(ReferenceValue)
   REXTORE(new Rextore()),
   DODUD(new Dodud()),
+  IRONFANG(new IronFang()),
   BUNZ(new Bunz());
 
 

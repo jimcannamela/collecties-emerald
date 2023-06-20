@@ -23,7 +23,9 @@ public enum Consumables {
   RIBS(new Ribs()),
   SUBSANDWICH(new SubSandwich()),
   GUPPIES(new Guppies()),
-  GREENPOTION(new GreenPotion());
+  GREENPOTION(new GreenPotion()),
+
+  REDDODUD_SUGAR_FREE(new RedDodud());
 
   // Create a static array of all the Consumables
   private static final Consumables[] consumablesArray = Consumables.values();

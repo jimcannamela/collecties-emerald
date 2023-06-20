@@ -98,6 +98,15 @@ public abstract class Collectie {
   private final CollectieType type;
   private String name;
   private final String sound;
+  private CollectieStatus status;
+
+  public CollectieStatus getStatus() {
+    return status;
+  }
+
+  public void setStatus(CollectieStatus status) {
+    this.status = status;
+  }
 
   /*
    * Basic constructor except all Collecties start with a
@@ -107,6 +116,7 @@ public abstract class Collectie {
     this.name = this.getSpecies() + " " + Game.randogen.nextInt();
     this.type = type;
     this.sound = sound;
+    this.status = CollectieStatus.CONSCIOUS;
   }
 
   /*

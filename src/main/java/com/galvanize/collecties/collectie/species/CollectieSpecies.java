@@ -20,6 +20,9 @@ public enum CollectieSpecies {
   SPECTRECLE(new Spectrecle()),
   PUGGLE(new Puggle()),
   SPURTLE(new Spurtle());
+  DODUD(new Dodud()),
+  IRONFANG(new IronFang()),
+  BUNZ(new Bunz());
 
 
   /*

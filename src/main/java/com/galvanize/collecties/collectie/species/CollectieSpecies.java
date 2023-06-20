@@ -21,7 +21,9 @@ public enum CollectieSpecies {
   PUGGLE(new Puggle()),
   SPURTLE(new Spurtle()),
   IRONFANG(new IronFang()),
-  BUNZ(new Bunz());
+  BUNZ(new Bunz()),
+  SKELOSAUR(new Skelosaur());
+
 
 
   /*

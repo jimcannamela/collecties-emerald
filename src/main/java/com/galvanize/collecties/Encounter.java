@@ -66,7 +66,10 @@ public class Encounter {
     // otherwise cheese it
     if (prompt.getChoice(battleChoices.length) == 1) {
       if (challenger.getStatus() == CollectieStatus.UNCONSCIOUS) {
-        printer.print("Your protector is unconscious so you GTFO!!");
+        printer.multiline(
+                "", // Add space before
+                "Your protector is unconscious so you GTFO!!"
+        ).print();
         return false;
       }
       // skirmish returns true if the player wins

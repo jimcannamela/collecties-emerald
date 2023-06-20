@@ -104,6 +104,14 @@ public abstract class Collectie {
     return status;
   }
 
+  public String getStatusString(){
+    String output = String.valueOf(this.getStatus());
+    if(output.equals("CONSCIOUS"))
+      return "";
+    else
+      return "[" + output + "]";
+  }
+
   public void setStatus(CollectieStatus status) {
     this.status = status;
   }

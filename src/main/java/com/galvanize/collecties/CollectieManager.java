@@ -139,15 +139,16 @@ public class CollectieManager {
    * all the collecties in the collection
    */
   private void printCollectieChoices() {
+    printer.print("Collectie Collection");
     for(int i = 0; i < collection.size(); i++) {
       Collectie c = collection.get(i);
 
-      printer.print("Collectie Collection");
       printer.print(
-        "[%d] %s (%s)",
+        "[%d] %s (%s) %s",
         i + 1,
         c.getName(),
-        c.getSpecies());
+        c.getSpecies(),
+        c.getStatusString());
     }
   }
 

@@ -18,6 +18,7 @@ public enum CollectieSpecies {
   REXTORE(new Rextore()),
   SHARK(new Shark()),
   DODUD(new Dodud()),
+  IRONFANG(new IronFang()),
   BUNZ(new Bunz());
 
 

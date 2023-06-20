@@ -18,6 +18,7 @@ public enum Consumables {
   // CONSUMABLE(new Consumable()) / KEY(VALUE)
   ENERGY_DRINK(new EnergyDrink()),
   PIZZA(new Pizza()),
+  COTTONCANDY(new CottonCandy()),
   KETCHUP_PACKET(new KetchupPacket());
 
   // Create a static array of all the Consumables

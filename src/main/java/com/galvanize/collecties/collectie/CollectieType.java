@@ -9,5 +9,6 @@ public enum CollectieType {
   ELEMENTAL,
   AQUA,
   SPECIAL,
-  SNACK
+  SNACK,
+  FAIRY;
 }

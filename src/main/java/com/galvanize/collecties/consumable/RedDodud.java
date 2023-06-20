@@ -13,5 +13,5 @@ public class RedDodud implements Consumable {
 
     @Override
     public Consumable clone() {
-        return new CottonCandy();}
+        return new RedDodud();}
 }

@@ -7,29 +7,26 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-@DisplayName("Consumable: Sub Sandwich")
-public class SubSandwichTest {
 
-    SubSandwich sandwich;
+@DisplayName("Consumable: Cereal")
+public class CerealTest {
+
+    Cereal cereal;
 
     @BeforeEach
-    public void testSetup() {
-        sandwich = new SubSandwich();
-    }
+    public void testSetup() {cereal = new Cereal();}
 
     @Test
-    public void shouldHaveTheRightName() {
-        assertEquals("This is a Roast Rextore sub, made from the finest Rextore.", sandwich.getName());
-    }
+    void shouldHaveTheRightName() {assertEquals("Chocolate Blasted Sugar Bombs", cereal.getName());}
 
     @Test
     public void shouldOnlyHaveOneUsage() {
-        assertTrue(sandwich.consume());
+        assertTrue(cereal.consume());
     }
 
     @Test
     public void shouldBeAbleReturnASpecificBiome() {
-        Biome actual = sandwich.getContainingBiome();
-        assertEquals(Biome.TUNDRA,actual);
+        Biome actual = cereal.getContainingBiome();
+        assertEquals(Biome.SAVANNA,actual);
     }
 }

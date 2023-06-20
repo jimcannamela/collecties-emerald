@@ -1,5 +1,7 @@
 package com.galvanize.collecties.consumable;
 
+import com.galvanize.collecties.Biome;
+
 public class GreenPotion implements Consumable{
 
     private int uses = 2;
@@ -22,5 +24,10 @@ public class GreenPotion implements Consumable{
     @Override
     public Consumable clone() {
         return new GreenPotion();
+    }
+
+    @Override
+    public Biome getContainingBiome() {
+        return Biome.VOLCANIC;
     }
 }

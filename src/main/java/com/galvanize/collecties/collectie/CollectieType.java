@@ -9,8 +9,9 @@ public enum CollectieType {
   ELEMENTAL,
   AQUA,
   SPECIAL,
-  SNACK,
   FAIRY,
+  HOMICIDAL_JUNGLE_CAT,
+  SNACK,
   MARINE,
   FIRE;
 }

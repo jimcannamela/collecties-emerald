@@ -1,6 +1,9 @@
 package com.galvanize.collecties.consumable;
 
+import com.galvanize.collecties.Biome;
 import com.galvanize.collecties.Game;
+
+import java.util.ArrayList;
 
 /*
  * This enum is used as a master list for all consumables
@@ -17,15 +20,17 @@ public enum Consumables {
   // it represents
   // CONSUMABLE(new Consumable()) / KEY(VALUE)
   ENERGY_DRINK(new EnergyDrink()),
+  ELIXIR(new Elixir()),
   PIZZA(new Pizza()),
+  CEREAL(new Cereal()),
   COTTONCANDY(new CottonCandy()),
   KETCHUP_PACKET(new KetchupPacket()),
   RIBS(new Ribs()),
   SUBSANDWICH(new SubSandwich()),
+  REDDODUD_SUGAR_FREE(new RedDodud()),
   GUPPIES(new Guppies()),
-  GREENPOTION(new GreenPotion()),
-
-  REDDODUD_SUGAR_FREE(new RedDodud());
+  VEGANCHILI(new VeganChili()),
+  GREENPOTION(new GreenPotion());
 
   // Create a static array of all the Consumables
   private static final Consumables[] consumablesArray = Consumables.values();
@@ -33,9 +38,17 @@ public enum Consumables {
   /*
    * Use the consumables array to easily get a random consumable
    */
-  public static Consumable getRandomConsumable() {
-    return consumablesArray[Game.randogen.nextInt(consumablesArray.length)]
-      .getReference()
+  public static Consumable getRandomConsumable(Biome currentBiome) {
+    ArrayList<Consumable> biomeConsumable = new ArrayList<>();
+    for (int i = 0; i < consumablesArray.length; i++) {
+      if(consumablesArray[i].getReference().getContainingBiome() == currentBiome){
+        biomeConsumable.add(consumablesArray[i].getReference());
+      }
+    }
+    if(biomeConsumable.isEmpty()){
+      return null;
+    }
+    return biomeConsumable.get(Game.randogen.nextInt(biomeConsumable.size()))
       .clone();
   }
 

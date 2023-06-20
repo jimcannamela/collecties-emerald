@@ -2,11 +2,11 @@ package com.galvanize.collecties.consumable;
 
 import com.galvanize.collecties.Biome;
 
-public class SubSandwich implements Consumable {
+public class Cereal implements Consumable {
 
     @Override
     public String getName() {
-        return "This is a Roast Rextore sub, made from the finest Rextore.";
+        return "Chocolate Blasted Sugar Bombs";
     }
 
     @Override
@@ -16,11 +16,11 @@ public class SubSandwich implements Consumable {
 
     @Override
     public Consumable clone() {
-        return new SubSandwich();
+        return new Cereal();
     }
 
     @Override
     public Biome getContainingBiome() {
-        return Biome.TUNDRA;
+        return Biome.SAVANNA;
     }
 }

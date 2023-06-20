@@ -83,8 +83,18 @@ public class Encounter {
         // return the choice the player gives for keeping the wild Collectie
         return prompt.getYesNo();
       }
-    } else{
+    } else {
+      int min = 1;
+      int max = 100;
+      int range = max - min + 1;
+      int surpriseAttack = (int) Math.floor((Math.random()* range) +  min);
+      if(surpriseAttack < 75){
+        opponent.performAttack();
+        printer.print(opponent.getSpecies() + " attacked you while you were running!!");
+      }
       printer.print("You cheese it the heckin' out of there.");
+      //if run then opponent perform attack at math.random percent
+
     }
 
 

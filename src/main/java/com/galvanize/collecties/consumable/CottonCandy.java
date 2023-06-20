@@ -1,5 +1,7 @@
 package com.galvanize.collecties.consumable;
 
+import com.galvanize.collecties.Biome;
+
 public class CottonCandy implements Consumable{
     @Override
     public String getName() {
@@ -14,4 +16,9 @@ public class CottonCandy implements Consumable{
     @Override
     public Consumable clone() {
         return new CottonCandy();}
+
+    @Override
+    public Biome getContainingBiome() {
+        return Biome.BOG;
+    }
 }

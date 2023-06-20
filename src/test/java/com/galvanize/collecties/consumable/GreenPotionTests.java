@@ -1,5 +1,6 @@
 package com.galvanize.collecties.consumable;
 
+import com.galvanize.collecties.Biome;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -31,6 +32,12 @@ public class GreenPotionTests {
         assertTrue(greenPotion.getName().contains("(2)"));
         greenPotion.consume();
         assertTrue(greenPotion.getName().contains("(1)"));
+    }
+
+    @Test
+    public void shouldBeAbleReturnASpecificBiome() {
+        Biome actual = greenPotion.getContainingBiome();
+        assertEquals(Biome.VOLCANIC,actual);
     }
 }
 

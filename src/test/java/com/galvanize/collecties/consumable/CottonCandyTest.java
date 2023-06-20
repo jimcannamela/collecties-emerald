@@ -1,13 +1,14 @@
 package com.galvanize.collecties.consumable;
 
+import com.galvanize.collecties.Biome;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@DisplayName("Consumable: Candy Floss")
-class CandyFlossTest {
+@DisplayName("Consumable: Cotton Candy")
+class CottonCandyTest {
 
     CottonCandy cottonCandy;
 
@@ -27,5 +28,11 @@ class CandyFlossTest {
     void shouldCreateNewConsumable() {
         Consumable clone = cottonCandy.clone();
         assertNotEquals(clone, cottonCandy);
+    }
+
+    @Test
+    public void shouldBeAbleReturnASpecificBiome() {
+        Biome actual = cottonCandy.getContainingBiome();
+        assertEquals(Biome.BOG,actual);
     }
 }

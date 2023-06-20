@@ -22,7 +22,7 @@ public enum Consumables {
   KETCHUP_PACKET(new KetchupPacket()),
   RIBS(new Ribs()),
   SUBSANDWICH(new SubSandwich()),
-  GUPPIES(new Guppies())
+  GUPPIES(new Guppies()),
   GREENPOTION(new GreenPotion());
 
   // Create a static array of all the Consumables

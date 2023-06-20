@@ -16,6 +16,7 @@ public enum CollectieSpecies {
   // it represents
   // SPECIES(new Species()) / KEY(ReferenceValue)
   REXTORE(new Rextore()),
+  SHARK(new Shark()),
   DODUD(new Dodud()),
   HOBBES(new Hobbes()),
   BUNZ(new Bunz()),

@@ -16,9 +16,15 @@ public enum CollectieSpecies {
   // it represents
   // SPECIES(new Species()) / KEY(ReferenceValue)
   REXTORE(new Rextore()),
+  SHARK(new Shark()),
   DODUD(new Dodud()),
-  IRONFANG(new IronFang()),
+  HOBBES(new Hobbes()),
   BUNZ(new Bunz()),
+  SPECTRECLE(new Spectrecle()),
+  PUGGLE(new Puggle()),
+  SPURTLE(new Spurtle()),
+  IRONFANG(new IronFang()),
+  PIZZAIOLO(new Pizzaiolo()),
   SKELOSAUR(new Skelosaur());
 
 

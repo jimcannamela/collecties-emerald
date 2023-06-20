@@ -24,6 +24,7 @@ public enum CollectieSpecies {
   PUGGLE(new Puggle()),
   SPURTLE(new Spurtle()),
   IRONFANG(new IronFang()),
+  PIZZAIOLO(new Pizzaiolo()),
   SKELOSAUR(new Skelosaur());
 
 

@@ -24,6 +24,7 @@ public enum Consumables {
   RIBS(new Ribs()),
   SUBSANDWICH(new SubSandwich()),
   GUPPIES(new Guppies()),
+  VEGANCHILI(new VeganChili()),
   GREENPOTION(new GreenPotion());
 
   // Create a static array of all the Consumables

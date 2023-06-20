@@ -36,7 +36,7 @@ public class Spectrecle extends Collectie{
 
     @Override
     public String getInfo() {
-        return null;
+        return "Spectrecle: A deceased adversary of Pac-Man and Mrs. Pac-Man, this ghastly creature resembles a delicious 'Dots' candy";
     }
 
     @Override

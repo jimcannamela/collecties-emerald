@@ -66,7 +66,7 @@ public class Spurtle extends Collectie {
 
 	@Override
 	public String getInfo() {
-		return null;
+		return "Spurtle: A small and agile amphibian, known for its not-so-lightning-fast movements and absent dexterity, evading attacks by withdrawing his appendages into his cute and protective shell (not to be confused with Squirtle).";
 	}
 
 	@Override

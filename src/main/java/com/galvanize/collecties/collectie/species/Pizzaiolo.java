@@ -42,7 +42,7 @@ public class Pizzaiolo extends Collectie {
 
     @Override
     public String getInfo() {
-        return null;
+        return "Pizzaiolo: An ethereal pizza-making chef, wielding a spectral pizza slicer to conjure doughy projections with deadly precision.";
     }
 
     @Override

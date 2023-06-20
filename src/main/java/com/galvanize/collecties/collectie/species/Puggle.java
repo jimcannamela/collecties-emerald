@@ -36,7 +36,7 @@ public class Puggle extends Collectie{
 
     @Override
     public String getInfo() {
-        return null;
+        return "Puggle: A freak experiment by Voldemort gone awry; this human/pug chimera will simultaneously delight and disgust your sensibilities.";
     }
 
     @Override

@@ -30,7 +30,7 @@ public class CollectidexTests {
     @Test
     public void printCollectieInfo_relevantInfoPrinted() {
         String actual = collectidex.printCollectieInformation(new Rextore());
-        String expected = "Rextore enjoys long walks on the beach after a bountiful feast of Dodud filets";
+        String expected = "Rextore: A Jurrasic era reincarnation, he enjoys long walks on the beach with Mrs. Rextore after a bountiful feast of Dodud filets";
         assertEquals(expected,actual, "Should return rextore's beachy post-feast walk string");
     }
 

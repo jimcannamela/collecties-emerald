@@ -46,7 +46,7 @@ public class Shark extends Collectie {
 
     @Override
     public String getInfo() {
-        return null;
+        return "Shark: A sleek and ruthless aquatic predator, swiftly navigating through battlefields with its razor-like teeth and unrelenting aggression.";
     }
 
     @Override

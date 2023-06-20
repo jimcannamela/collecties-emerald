@@ -50,7 +50,7 @@ public class Skelosaur extends Collectie {
 
     @Override
     public String getInfo() {
-        return null;
+        return "Skelosaur: Known to the natives as 'Shikaka', this Great White Bat is the sacred animal of the Wachati tribe, while also detested as a 'Winged Spawn of SATAN' by renown Pet Detective Ace Ventura";
     }
 
     @Override

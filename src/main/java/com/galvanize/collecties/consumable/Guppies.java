@@ -1,5 +1,7 @@
 package com.galvanize.collecties.consumable;
 
+import com.galvanize.collecties.Biome;
+
 public class Guppies implements Consumable {
 
 	private int fish = 3;
@@ -23,4 +25,9 @@ public class Guppies implements Consumable {
 	public Consumable clone() {
 		return new Guppies();
 	}
+
+    @Override
+    public Biome getContainingBiome() {
+        return Biome.OCEANIC;
+    }
 }

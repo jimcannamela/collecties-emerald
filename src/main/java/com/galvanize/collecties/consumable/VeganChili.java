@@ -1,5 +1,7 @@
 package com.galvanize.collecties.consumable;
 
+import com.galvanize.collecties.Biome;
+
 public class VeganChili implements Consumable {
 
     @Override
@@ -15,5 +17,10 @@ public class VeganChili implements Consumable {
     @Override
     public Consumable clone() {
         return new VeganChili();
+    }
+
+    @Override
+    public Biome getContainingBiome() {
+        return Biome.SHADOW_DIMENSION;
     }
 }

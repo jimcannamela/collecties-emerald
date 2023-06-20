@@ -1,5 +1,6 @@
 package com.galvanize.collecties.consumable;
 
+import com.galvanize.collecties.Biome;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -35,5 +36,11 @@ public class RibsTests {
         assertTrue(ribs.getName().contains("(7)"));
         ribs.consume();
         assertTrue(ribs.getName().contains("(6)"));
+    }
+
+    @Test
+    public void shouldBeAbleReturnASpecificBiome() {
+        Biome actual = ribs.getContainingBiome();
+        assertEquals(Biome.TAIGA,actual);
     }
 }

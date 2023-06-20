@@ -29,7 +29,7 @@ public class GameTests {
         enableGameSleep();
         System.out.println(output);
         displayOutputLines(output);
-        Assertions.assertEquals("?: Thank you for playing!", output.split(System.lineSeparator())[13]);
+        Assertions.assertEquals("?: Thank you for playing!", output.split("\\r?\\n")[13]);
     }
 
     @Test
@@ -51,21 +51,21 @@ public class GameTests {
     public void canRenameCollectie() {
         String output = runGameWithInput("n", "3", "4", "1", "Rexter", "y", "1", "6", "4");
         displayOutputLines(output);
-        Assertions.assertEquals("[1] Rexter (Rextore)", output.split(System.lineSeparator())[34]);
+        Assertions.assertEquals("[1] Rexter (Rextore)", output.split("\\r?\\n")[34]);
     }
 
     @Test
     public void canRenameCollectieNotHappyWithName() {
         String output = runGameWithInput("n", "3", "4", "1", "Rexter", "n", "Rexy", "y", "1", "6", "4");
         displayOutputLines(output);
-        Assertions.assertEquals("[1] Rexy (Rextore)", output.split(System.lineSeparator())[37]);
+        Assertions.assertEquals("[1] Rexy (Rextore)", output.split("\\r?\\n")[37]);
     }
 
     @Test
     public void attemptToFeedCollectieWithNoConsumables() {
         String output = runGameWithInput("y", "Rextor", "y", "3", "3", "1", "6", "4");
         displayOutputLines(output);
-        Assertions.assertEquals("?: You have no consumables to feed Rextor!", output.split(System.lineSeparator())[26]);
+        Assertions.assertEquals("?: You have no consumables to feed Rextor!", output.split("\\r?\\n")[26]);
     }
 
     @Test
@@ -81,7 +81,7 @@ public class GameTests {
         String output = runGameWithInput("n", "2", "4");
         enableGameSleep();
         displayOutputLines(output);
-        Assertions.assertEquals("You found a Rextore Claws Energy Drink while exploring.", output.split(System.lineSeparator())[14]);
+        Assertions.assertEquals("You found a Rextore Claws Energy Drink while exploring.", output.split("\\r?\\n")[14]);
     }
 
     @Test
@@ -97,7 +97,7 @@ public class GameTests {
         String output = runGameWithInput("n", "2", "1", "n", "4");
         enableGameSleep();
         displayOutputLines(output);
-        Assertions.assertEquals("Would you like to capture the wild Rextore?", output.split(System.lineSeparator())[50]);
+        Assertions.assertEquals("Would you like to capture the wild Rextore?", output.split("\\r?\\n")[50]);
     }
 
     @Test
@@ -114,8 +114,8 @@ public class GameTests {
         String output = runGameWithInput("n", "2", "1", "4");
         enableGameSleep();
         displayOutputLines(output);
-        Assertions.assertEquals("The wild Rextore manages to survive the blow!", output.split(System.lineSeparator())[49]);
-        Assertions.assertEquals("Rextore 10001 survives the blow!", output.split(System.lineSeparator())[52]);
+        Assertions.assertEquals("The wild Rextore manages to survive the blow!", output.split("\\r?\\n")[49]);
+        Assertions.assertEquals("Rextore 10001 survives the blow!", output.split("\\r?\\n")[52]);
     }
 
     @Test
@@ -132,7 +132,7 @@ public class GameTests {
         String output = runGameWithInput("n", "2", "1", "4");
         enableGameSleep();
         displayOutputLines(output);
-        Assertions.assertEquals("The wild Rextore manages to survive the blow!", output.split(System.lineSeparator())[49]);
-        Assertions.assertEquals("Rextore 10001 has fallen!", output.split(System.lineSeparator())[52]);
+        Assertions.assertEquals("The wild Rextore manages to survive the blow!", output.split("\\r?\\n")[49]);
+        Assertions.assertEquals("Rextore 10001 has fallen!", output.split("\\r?\\n")[52]);
     }
 }

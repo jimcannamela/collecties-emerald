@@ -19,7 +19,13 @@ public enum CollectieSpecies {
   DODUD(new Dodud()),
   HOBBES(new Hobbes()),
   BUNZ(new Bunz()),
-  IronFang(new IronFang());
+  SPECTRECLE(new Spectrecle()),
+  PUGGLE(new Puggle()),
+  SPURTLE(new Spurtle()),
+  IRONFANG(new IronFang()),
+  SKELOSAUR(new Skelosaur());
+
+
 
   /*
    * Enums can actually have a constructor

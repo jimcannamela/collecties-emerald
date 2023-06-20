@@ -7,8 +7,11 @@ public enum CollectieType {
   DINOSAUR,
   GHOST,
   ELEMENTAL,
+  AQUA,
   SPECIAL,
   FAIRY,
   HOMICIDAL_JUNGLE_CAT,
-  SNACK;
+  SNACK,
+  MARINE,
+  FIRE;
 }

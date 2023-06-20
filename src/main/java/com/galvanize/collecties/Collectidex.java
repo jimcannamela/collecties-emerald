@@ -27,8 +27,8 @@ public class Collectidex {
                 "Select a species of Collecties");
 
         printer.formatAsList(speciesMenuItems).print();
-
-        System.out.println(printCollectieInformation(CollectieSpecies.valueOf(speciesMenuItems[prompt.getChoice(speciesMenuItems.length)-1]).getReference()));
+        String choosenCollectie = speciesMenuItems[prompt.getChoice(speciesMenuItems.length)-1];
+        printer.print(printCollectieInformation(CollectieSpecies.valueOf(choosenCollectie).getReference()));
     return speciesMenuItems;
     }
     public String printCollectieInformation(Collectie collectie) {

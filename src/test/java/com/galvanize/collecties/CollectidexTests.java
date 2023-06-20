@@ -28,16 +28,6 @@ public class CollectidexTests {
     }
 
     @Test
-    public void gotoCollectidexMenu_MenuOptionsAreProperlyCreated(){
-        String[] actual = collectidex.getSpeciesMenuItems();
-
-        List<String> actualList = Arrays.asList(actual);
-
-        assertTrue(actualList.contains("REXTORE"));
-        assertTrue(actualList.contains("Exit"));
-    }
-
-    @Test
     public void printCollectieInfo_relevantInfoPrinted() {
         String actual = collectidex.printCollectieInformation(new Rextore());
         String expected = "Rextore enjoys long walks on the beach after a bountiful feast of Dodud filets";

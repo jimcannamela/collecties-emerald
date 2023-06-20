@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import java.util.*;
 
 import static com.galvanize.collecties.GameHelper.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class GameTests {
 
@@ -38,6 +39,14 @@ public class GameTests {
         String output = runGameWithInput(gameInput);
         System.out.println(output);
         Assertions.assertTrue(output.contains("Collectie Collection"));
+    }
+
+    @Test
+    public void getCollectidexMenu(){
+        List<String> gameInput = new ArrayList<>(Arrays.asList("n", "4", "1","5"));
+        String output = runGameWithInput(gameInput);
+        System.out.println(output);
+        Assertions.assertTrue(output.contains("Rextore enjoys long walks on the beach after a bountiful feast of Dodud filets"));
     }
 
     @Test

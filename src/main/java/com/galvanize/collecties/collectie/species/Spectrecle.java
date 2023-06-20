@@ -35,6 +35,11 @@ public class Spectrecle extends Collectie{
     }
 
     @Override
+    public String getInfo() {
+        return null;
+    }
+
+    @Override
     public Spectrecle clone() {
         return new Spectrecle();
     }

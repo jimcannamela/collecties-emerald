@@ -51,6 +51,11 @@ public class Bunz extends Collectie {
     }
 
     @Override
+    public String getInfo() {
+        return null;
+    }
+
+    @Override
     public Bunz clone() {
         return new Bunz();
     }

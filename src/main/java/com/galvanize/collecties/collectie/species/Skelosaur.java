@@ -49,6 +49,11 @@ public class Skelosaur extends Collectie {
     }
 
     @Override
+    public String getInfo() {
+        return null;
+    }
+
+    @Override
     public Skelosaur clone() {
         return new Skelosaur();
     }

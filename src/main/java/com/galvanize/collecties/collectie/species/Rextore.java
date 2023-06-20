@@ -58,6 +58,11 @@ public class Rextore extends Collectie {
   }
 
   @Override
+  public String getInfo() {
+    return "Rextore enjoys long walks on the beach after a bountiful feast of Dodud filets";
+  }
+
+  @Override
   public Rextore clone() {
     return new Rextore();
   }

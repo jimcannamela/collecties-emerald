@@ -41,6 +41,11 @@ public class Hobbes extends Collectie {
     }
 
     @Override
+    public String getInfo() {
+        return null;
+    }
+
+    @Override
     public Hobbes clone() {
         return new Hobbes();
     }

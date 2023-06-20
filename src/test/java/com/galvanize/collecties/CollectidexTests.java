@@ -1,6 +1,7 @@
 package com.galvanize.collecties;
 
 import com.galvanize.collecties.collectie.species.CollectieSpecies;
+import com.galvanize.collecties.collectie.species.Rextore;
 import com.galvanize.collecties.utils.terminal.Printer;
 import com.galvanize.collecties.utils.terminal.Prompt;
 import org.junit.jupiter.api.BeforeEach;
@@ -27,7 +28,7 @@ public class CollectidexTests {
     }
 
     @Test
-    public void testConstructore_MenuOptionsAreProperlyCreated(){
+    public void gotoCollectidexMenu_MenuOptionsAreProperlyCreated(){
         String[] actual = collectidex.getSpeciesMenuItems();
 
         List<String> actualList = Arrays.asList(actual);
@@ -35,4 +36,12 @@ public class CollectidexTests {
         assertTrue(actualList.contains("REXTORE"));
         assertTrue(actualList.contains("Exit"));
     }
+
+    @Test
+    public void printCollectieInfo_relevantInfoPrinted() {
+        String actual = collectidex.printCollectieInformation(new Rextore());
+        String expected = "Rextore enjoys long walks on the beach after a bountiful feast of Dodud filets";
+        assertEquals(expected,actual, "Should return rextore's beachy post-feast walk string");
+    }
+
 }

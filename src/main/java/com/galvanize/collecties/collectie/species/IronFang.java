@@ -40,6 +40,11 @@ public class IronFang extends Collectie {
     }
 
     @Override
+    public String getInfo() {
+        return null;
+    }
+
+    @Override
     public IronFang clone() {
         return new IronFang();
     }

@@ -41,6 +41,11 @@ public class Pizzaiolo extends Collectie {
     }
 
     @Override
+    public String getInfo() {
+        return null;
+    }
+
+    @Override
     public Pizzaiolo clone() {
         return new Pizzaiolo();
     }

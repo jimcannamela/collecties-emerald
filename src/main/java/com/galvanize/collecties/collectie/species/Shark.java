@@ -45,6 +45,11 @@ public class Shark extends Collectie {
     }
 
     @Override
+    public String getInfo() {
+        return null;
+    }
+
+    @Override
     public Shark clone() {
         return new Shark();
     }

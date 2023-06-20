@@ -65,6 +65,11 @@ public class Spurtle extends Collectie {
 	}
 
 	@Override
+	public String getInfo() {
+		return null;
+	}
+
+	@Override
 	public Spurtle clone() {
 		return new Spurtle();
 	}

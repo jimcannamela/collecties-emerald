@@ -34,6 +34,11 @@ public class Dodud extends Collectie {
   }
 
   @Override
+  public String getInfo() {
+    return null;
+  }
+
+  @Override
   public Dodud clone() {
     return new Dodud();
   }

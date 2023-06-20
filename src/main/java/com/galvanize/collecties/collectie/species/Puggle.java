@@ -35,6 +35,11 @@ public class Puggle extends Collectie{
     }
 
     @Override
+    public String getInfo() {
+        return null;
+    }
+
+    @Override
     public Puggle clone() {
         return new Puggle();
     }

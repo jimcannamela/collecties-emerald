@@ -1,14 +1,13 @@
 package com.galvanize.collecties.collectie.species;
-
 import com.galvanize.collecties.Biome;
 import com.galvanize.collecties.collectie.Collectie;
 import com.galvanize.collecties.collectie.CollectieType;
 
-public class LordDoof extends Collectie {
+public class IronFang extends Collectie {
 
     String name;
 
-    public LordDoof() {super(CollectieType.STEEL, "soooooieeeeeeee");}
+    public IronFang() {super(CollectieType.FAIRY, "BIDOOOOOOOF");}
 
     public void setNewName(String name) {
         this.name = name;
@@ -27,21 +26,21 @@ public class LordDoof extends Collectie {
 
     @Override
     public Biome getPreferredBiome() {
-        return null;
+        return Biome.BOG;
     }
 
     @Override
     public int performAttack() {
-        return 0;
+        return 100;
     }
 
     @Override
     public boolean defend(int attackStrength) {
-        return false;
+        return true;
     }
 
     @Override
-    public Collectie clone() {
-        return null;
+    public IronFang clone() {
+        return new IronFang();
     }
 }

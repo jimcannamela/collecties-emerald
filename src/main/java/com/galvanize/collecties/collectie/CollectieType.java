@@ -11,5 +11,6 @@ public enum CollectieType {
   SPECIAL,
   SNACK,
   FAIRY,
-  FIRE
+  MARINE,
+  FIRE;
 }

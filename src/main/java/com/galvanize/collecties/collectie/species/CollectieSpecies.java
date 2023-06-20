@@ -18,11 +18,12 @@ public enum CollectieSpecies {
   REXTORE(new Rextore()),
   SHARK(new Shark()),
   DODUD(new Dodud()),
+  HOBBES(new Hobbes()),
+  BUNZ(new Bunz()),
   SPECTRECLE(new Spectrecle()),
   PUGGLE(new Puggle()),
   SPURTLE(new Spurtle()),
   IRONFANG(new IronFang()),
-  BUNZ(new Bunz()),
   SKELOSAUR(new Skelosaur());
 
 

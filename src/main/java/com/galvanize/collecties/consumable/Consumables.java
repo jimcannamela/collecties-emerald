@@ -18,6 +18,7 @@ public enum Consumables {
   // CONSUMABLE(new Consumable()) / KEY(VALUE)
   ENERGY_DRINK(new EnergyDrink()),
   PIZZA(new Pizza()),
+  CEREAL(new Cereal()),
   COTTONCANDY(new CottonCandy()),
   KETCHUP_PACKET(new KetchupPacket()),
   RIBS(new Ribs()),

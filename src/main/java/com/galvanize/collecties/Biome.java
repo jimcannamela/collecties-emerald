@@ -12,6 +12,7 @@ public enum Biome {
   OCEANIC,
   BEACH,
   MOUNTAIN_RANGE,
+  JUNGLE,
   VOLCANIC;
 
   // Create a static array of all the Biomes

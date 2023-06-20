@@ -18,7 +18,8 @@ public enum Consumables {
   // CONSUMABLE(new Consumable()) / KEY(VALUE)
   ENERGY_DRINK(new EnergyDrink()),
   PIZZA(new Pizza()),
-  RIBS(new Ribs());
+  RIBS(new Ribs()),
+  SUBSANDWICH(new SubSandwich());
 
   // Create a static array of all the Consumables
   private static final Consumables[] consumablesArray = Consumables.values();

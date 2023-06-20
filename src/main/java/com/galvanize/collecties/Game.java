@@ -128,7 +128,7 @@ public class Game {
     switch(prompt.getChoice(mainMenuChoices.length)) {
       // All we do here is do a fake "loading" then pick a new random biome
       case 1:
-        printer.wait(1,"Traveling");
+        printer.wait(3,"Traveling");
         currentBiome = Collectie.getRandomNonEmptyBiome();
         gotoMainMenu();
         break;
@@ -137,7 +137,7 @@ public class Game {
         printer.format(
           "Exploring the %s biome around you.",
           currentBiome)
-        .wait(1);
+        .wait(5);
 
         // 50% chance to find something vs having an encounter
         // Offload both to a another method to avoid a bunch of

@@ -19,7 +19,9 @@ public enum CollectieSpecies {
   SHARK(new Shark()),
   DODUD(new Dodud()),
   IRONFANG(new IronFang()),
-  BUNZ(new Bunz());
+  BUNZ(new Bunz()),
+  SKELOSAUR(new Skelosaur());
+
 
 
   /*

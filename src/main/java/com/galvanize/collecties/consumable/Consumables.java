@@ -19,6 +19,7 @@ public enum Consumables {
   ENERGY_DRINK(new EnergyDrink()),
   PIZZA(new Pizza()),
   CEREAL(new Cereal()),
+  COTTONCANDY(new CottonCandy()),
   KETCHUP_PACKET(new KetchupPacket());
 
   // Create a static array of all the Consumables

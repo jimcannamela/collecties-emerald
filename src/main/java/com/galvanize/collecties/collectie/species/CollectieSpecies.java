@@ -18,7 +18,8 @@ public enum CollectieSpecies {
   REXTORE(new Rextore()),
   DODUD(new Dodud()),
   HOBBES(new Hobbes()),
-  BUNZ(new Bunz());
+  BUNZ(new Bunz()),
+  IronFang(new IronFang());
 
   /*
    * Enums can actually have a constructor

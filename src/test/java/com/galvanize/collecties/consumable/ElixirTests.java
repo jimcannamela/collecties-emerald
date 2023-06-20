@@ -1,5 +1,6 @@
 package com.galvanize.collecties.consumable;
 
+import com.galvanize.collecties.Biome;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -16,7 +17,7 @@ public class ElixirTests {
 
     @Test
     void shouldHaveTheRightName() {
-        assertEquals("Recovers 100% health from Shark Attacks. Remaining usage (3)", elixir.getName());
+        assertEquals("Shark Elixir (3)", elixir.getName());
     }
 
     @Test
@@ -24,5 +25,11 @@ public class ElixirTests {
         assertFalse(elixir.consume());
         assertFalse(elixir.consume());
         assertTrue(elixir.consume());
+    }
+
+    @Test
+    public void shouldBeAbleReturnASpecificBiome() {
+        Biome actual = elixir.getContainingBiome();
+        assertEquals(Biome.OCEANIC,actual);
     }
 }

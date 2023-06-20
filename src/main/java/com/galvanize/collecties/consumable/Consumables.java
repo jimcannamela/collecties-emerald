@@ -19,7 +19,8 @@ public enum Consumables {
   ENERGY_DRINK(new EnergyDrink()),
   PIZZA(new Pizza()),
   RIBS(new Ribs()),
-  SUBSANDWICH(new SubSandwich());
+  SUBSANDWICH(new SubSandwich()),
+  GUPPIES(new Guppies());
 
   // Create a static array of all the Consumables
   private static final Consumables[] consumablesArray = Consumables.values();

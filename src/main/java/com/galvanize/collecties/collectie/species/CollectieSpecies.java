@@ -17,7 +17,9 @@ public enum CollectieSpecies {
   // SPECIES(new Species()) / KEY(ReferenceValue)
   REXTORE(new Rextore()),
   DODUD(new Dodud()),
-  SPECTRECLE(new Spectrecle());
+  SPECTRECLE(new Spectrecle()),
+  PUGGLE(new Puggle()),
+  SPURTLE(new Spurtle());
 
 
   /*

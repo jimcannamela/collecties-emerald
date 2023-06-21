@@ -14,7 +14,7 @@ public class Collectidex {
         this.prompt = prompt;
     }
 
-    public String[] getSpeciesMenuItems() {
+    public void getSpeciesMenuItems() {
         String[] speciesMenuItems = new String[CollectieSpecies.values().length + 1];
         int counter = 0;
         for (CollectieSpecies species : CollectieSpecies.values()) {
@@ -28,17 +28,15 @@ public class Collectidex {
 
         printer.formatAsList(speciesMenuItems).print();
         int choice = prompt.getChoice(speciesMenuItems.length);
-        if(choice == speciesMenuItems.length) return speciesMenuItems;
+        if(choice == speciesMenuItems.length) return;
         String choosenCollectie = speciesMenuItems[choice - 1];
         printer.print(printCollectieInformation(CollectieSpecies.valueOf(choosenCollectie).getReference()));
         printer.print(
                 "Would you like to view another collectie?");
         if(prompt.getYesNo()) getSpeciesMenuItems();
-        return speciesMenuItems;
     }
     public String printCollectieInformation(Collectie collectie) {
         return collectie.getInfo();
     }
-
 
 }

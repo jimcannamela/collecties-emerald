@@ -27,6 +27,7 @@ public enum Consumables {
   KETCHUP_PACKET(new KetchupPacket()),
   RIBS(new Ribs()),
   SUBSANDWICH(new SubSandwich()),
+  REDDODUD_SUGAR_FREE(new RedDodud()),
   GUPPIES(new Guppies()),
   VEGANCHILI(new VeganChili()),
   GREENPOTION(new GreenPotion());

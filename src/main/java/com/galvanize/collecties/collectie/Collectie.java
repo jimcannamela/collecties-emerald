@@ -104,6 +104,10 @@ public abstract class Collectie {
     return hp;
   }
 
+  public void setHp(int health){
+    this.hp = health;
+  }
+
   //Improved Combat field
   private int hp;
 

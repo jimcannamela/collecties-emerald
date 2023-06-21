@@ -23,4 +23,9 @@ public class SubSandwich implements Consumable {
     public Biome getContainingBiome() {
         return Biome.TUNDRA;
     }
+
+    @Override
+    public int hpRecovered() {
+        return 30;
+    }
 }

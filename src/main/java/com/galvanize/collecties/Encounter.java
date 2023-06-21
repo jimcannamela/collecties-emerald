@@ -123,66 +123,72 @@ public class Encounter {
     while(!opponent.isHealthZero() && !challenger.isHealthZero()) {
 
       if (opponent.defend(challenger.performAttack())) {
-        printer.multiline(
-                        "", // Add space before
-                        "The wild %s manages to survive the blow!",
-                        "It counter-attacks!"
-                )
-                .print(opponent.getSpecies());
+//        printer.multiline(
+//                        "", // Add space before
+//                        "The wild %s manages to protect itself from the blow!",
+//                        "It counter-attacks!"
+//                )
+//                .print(opponent.getSpecies());
       } else {
         opponent.subtractHealth(challenger.performAttack());
         //Prompt.fakeWait(3);
-        printer.multiline("%s opponent current health").print(opponent.getHp());
+//        printer.multiline("%s opponent health after attack").print(opponent.getHp());
       }
       if (opponent.isHealthZero()) {
-        challenger.setStatus(CollectieStatus.UNCONSCIOUS);
+        opponent.setStatus(CollectieStatus.UNCONSCIOUS);
         printer.multiline(
                         "", //Add space before
-                        "%s has fallen and is unconscious!"
+                        "%s has fallen and is unconscious!",
+                        "Your %s won the battle with %s hp left"
                 )
-                .print(challenger.getName());
+                .print(opponent.getName(),challenger.getName(),challenger.getHp());
+        opponent.setHp(0);
 
         return true;
       }
       if (challenger.defend(opponent.performAttack())) {
-        printer.multiline(
-                        "", // Add space before
-                        "The wild %s manages to survive the blow!",
-                        "It counter-attacks!"
-                )
-                .print(challenger.getSpecies());
+//        printer.multiline(
+//                        "", // Add space before
+//                        "The wild %s manages to protect itself from the blow!",
+//                        "It counter-attacks!"
+//                )
+//                .print(challenger.getSpecies());
       } else {
         challenger.subtractHealth(opponent.performAttack());
         //Prompt.fakeWait(3);
+//        printer.multiline("%s challenger health after attack").print(challenger.getHp());
+
       }
       if (challenger.isHealthZero()) {
-        opponent.setStatus(CollectieStatus.UNCONSCIOUS);
+        challenger.setStatus(CollectieStatus.UNCONSCIOUS);
         printer.multiline(
                         "", //Add space before
-                        "%s has fallen and is unconscious!"
+                        "%s has fallen and is unconscious!",
+                        "The wild %s won the battle with %s hp left"
                 )
-                .print(opponent.getName());
+                .print(challenger.getName(),opponent.getName(),opponent.getHp());
+        challenger.setHp(0);
 
         return false;
       }
         // The player defends against the wild attack
         // The if is true the player SURVIVES
-        if (challenger.defend(opponent.performAttack())) {
-          printer.multiline(
-                          "", //Add space before
-                          "%s survives the blow!"
-                  )
-                  .print(challenger.getName());
-        } else {
-          challenger.setStatus(CollectieStatus.UNCONSCIOUS);
-          printer.multiline(
-                          "", //Add space before
-                          "%s has fallen and is unconscious!",
-                          "%s challenger current health"
-                  )
-                  .print(challenger.getName(), challenger.getHp());
-
-        }
+//        if (challenger.defend(opponent.performAttack())) {
+//          printer.multiline(
+//                          "", //Add space before
+//                          "%s survives the blow!"
+//                  )
+//                  .print(challenger.getName());
+//        } else {
+//          challenger.setStatus(CollectieStatus.UNCONSCIOUS);
+//          printer.multiline(
+//                          "", //Add space before
+//                          "%s has fallen and is unconscious!",
+//                          "%s challenger current health"
+//                  )
+//                  .print(challenger.getName(), challenger.getHp());
+//
+//        }
 
         // Regardless of surviving the counter attack
         // if the wild Collectie survives the player lost

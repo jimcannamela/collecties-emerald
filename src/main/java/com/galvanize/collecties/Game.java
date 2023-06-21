@@ -42,6 +42,7 @@ public class Game {
     "Travel to the next Biome",
     "Explore",
     "Manage Collection",
+          "Collectidex",
     "Exit"
   };
   private boolean exitGame;
@@ -75,10 +76,13 @@ public class Game {
   // Start with a random biome
   Biome currentBiome = Collectie.getRandomNonEmptyBiome();
 
+  private Collectidex collectidex;
+
   Game(Printer printer, Prompt prompt) {
     this.printer = printer;
     this.prompt = prompt;
     this.collection = new CollectieManager(printer, prompt);
+    this.collectidex = new Collectidex(printer,prompt);
   }
 
   /*
@@ -151,6 +155,10 @@ public class Game {
 
       case 3: // We offload inventory management to a different class
         collection.gotoManagementMenu();
+        break;
+
+      case 4:
+        collectidex.getSpeciesMenuItems();
         break;
 
       // Since prompt.getChoice() clamps it's return

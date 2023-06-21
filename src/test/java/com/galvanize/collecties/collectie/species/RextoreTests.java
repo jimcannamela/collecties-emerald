@@ -74,4 +74,9 @@ public class RextoreTests {
     Rextore clone = rexxie.clone();
     assertNotEquals(clone, rexxie);
   }
+
+  @Test
+  public void getInfo() {
+    assertEquals(rexxie.getInfo(), "Rextore: A Jurrasic era reincarnation, he enjoys long walks on the beach with Mrs. Rextore after a bountiful feast of Dodud filets");
+  }
 }

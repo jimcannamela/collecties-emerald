@@ -73,4 +73,9 @@ public class SharkTests {
         Shark clone = shark.clone();
         assertNotEquals(clone, shark);
     }
+
+    @Test
+    public void getInfo() {
+        assertEquals(shark.getInfo(), "Shark: A sleek and ruthless aquatic predator, swiftly navigating through battlefields with its razor-like teeth and unrelenting aggression.");
+    }
 }

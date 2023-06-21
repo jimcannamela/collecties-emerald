@@ -51,6 +51,11 @@ public class Bunz extends Collectie {
     }
 
     @Override
+    public String getInfo() {
+        return "Bunz: A fiery and fearsome entity, embodying the essence of a hotdog with a passion for highly-processed meat-based combat";
+    }
+
+    @Override
     public Bunz clone() {
         return new Bunz();
     }

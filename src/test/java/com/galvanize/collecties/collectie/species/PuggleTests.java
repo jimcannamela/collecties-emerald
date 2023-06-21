@@ -82,4 +82,9 @@ public class PuggleTests {
         Puggle clone = pug.clone();
         assertNotEquals(clone, pug);
     }
+
+    @Test
+    public void getInfo() {
+        assertEquals(pug.getInfo(), "Puggle: A freak experiment by Voldemort gone awry; this human/pug chimera will simultaneously delight and disgust your sensibilities.");
+    }
 }

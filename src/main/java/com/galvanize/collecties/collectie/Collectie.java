@@ -195,6 +195,8 @@ public abstract class Collectie {
   // Notice this returns a boolean, IE "was the defense successful?"
   public abstract boolean defend(int attackStrength);
 
+  public abstract String getInfo();
+
   // Clone should be used to return a new instance of the child class
   // IE myRextore.clone() != myRextore and rexClone is a Rextore instance
   public abstract Collectie clone();

@@ -45,6 +45,11 @@ public class Shark extends Collectie {
     }
 
     @Override
+    public String getInfo() {
+        return "Baby Shark, do do dodo do do, Baby Shark, do do dodo do do, Baby SHARK!";
+    }
+
+    @Override
     public Shark clone() {
         return new Shark();
     }

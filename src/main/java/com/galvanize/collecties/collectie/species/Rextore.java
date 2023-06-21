@@ -58,6 +58,11 @@ public class Rextore extends Collectie {
   }
 
   @Override
+  public String getInfo() {
+    return "Rextore: A Jurrasic era reincarnation, he enjoys long walks on the beach with Mrs. Rextore after a bountiful feast of Dodud filets";
+  }
+
+  @Override
   public Rextore clone() {
     return new Rextore();
   }

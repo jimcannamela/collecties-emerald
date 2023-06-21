@@ -34,6 +34,11 @@ public class Dodud extends Collectie {
   }
 
   @Override
+  public String getInfo() {
+    return "Dodud: A quirky and delicious creature with an tasty disposition, skilled at releasing methane gas into the upper stratosphere.";
+  }
+
+  @Override
   public Dodud clone() {
     return new Dodud();
   }

@@ -40,6 +40,11 @@ public class IronFang extends Collectie {
     }
 
     @Override
+    public String getInfo() {
+        return "IronFang: A formidable and imposing fairy, adorned with metallic armor and possessing razor-sharp fangs, striking fear into the hearts of its foes.";
+    }
+
+    @Override
     public IronFang clone() {
         return new IronFang();
     }

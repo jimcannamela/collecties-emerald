@@ -72,4 +72,9 @@ public class SpectrecleTests {
         Spectrecle clone = specs.clone();
         assertNotEquals(clone, specs);
     }
+
+    @Test
+    public void getInfo() {
+        assertEquals(specs.getInfo(), "Spectrecle: A deceased adversary of Pac-Man and Mrs. Pac-Man, this ghastly creature resembles a delicious 'Dots' candy");
+    }
 }

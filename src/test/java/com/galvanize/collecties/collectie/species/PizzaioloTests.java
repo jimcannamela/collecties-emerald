@@ -74,4 +74,9 @@ public class PizzaioloTests {
         Pizzaiolo clone = pizzaiolo.clone();
         assertNotEquals(clone, pizzaiolo);
     }
+
+    @Test
+    public void getInfo() {
+        assertEquals(pizzaiolo.getInfo(), "Pizzaiolo: An ethereal pizza-making chef, wielding a spectral pizza slicer to conjure doughy projections with deadly precision.");
+    }
 }

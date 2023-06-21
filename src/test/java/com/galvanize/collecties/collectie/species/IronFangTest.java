@@ -69,6 +69,11 @@ void setUp() {fangy = new IronFang();}
     IronFang clone = fangy.clone();
     assertNotEquals(clone, fangy);
    }
+
+    @Test
+    public void getInfo() {
+        assertEquals(fangy.getInfo(), "IronFang: A formidable and imposing fairy, adorned with metallic armor and possessing razor-sharp fangs, striking fear into the hearts of its foes.");
+    }
    @Test
     void shouldTestIfHPIsZero() {
     boolean currentHP = fangy.subtractHealth(2);

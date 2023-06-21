@@ -73,4 +73,9 @@ public class SharkTests {
         Shark clone = shark.clone();
         assertNotEquals(clone, shark);
     }
+
+    @Test
+    public void getInfo() {
+        assertEquals(shark.getInfo(), "Baby Shark, do do dodo do do, Baby Shark, do do dodo do do, Baby SHARK!");
+    }
 }

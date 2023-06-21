@@ -74,4 +74,9 @@ public class SpurtleTests {
 		Spurtle clone = spurtle.clone();
 		assertNotEquals(clone, spurtle);
 	}
+
+	@Test
+	public void getInfo() {
+		assertEquals(spurtle.getInfo(), "Spurtle: A small and agile amphibian, known for its not-so-lightning-fast movements and absent dexterity, evading attacks by withdrawing his appendages into his cute and protective shell (not to be confused with Squirtle).");
+	}
 }

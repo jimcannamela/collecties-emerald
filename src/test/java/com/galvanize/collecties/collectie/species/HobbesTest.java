@@ -70,4 +70,9 @@ public class HobbesTest {
             assertNotEquals(clone, hobbes);
         }
 
+    @Test
+    public void getInfo() {
+        assertEquals(hobbes.getInfo(), "Hobbes: A charismatic and agile combatant, bringing the mischievous yet loyal nature of a true friend into battle.");
+    }
+
 }

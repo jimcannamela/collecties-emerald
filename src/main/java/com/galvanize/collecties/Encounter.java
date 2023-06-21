@@ -120,45 +120,48 @@ public class Encounter {
     // The opponent is defending against the player's attack
     // This if is true if the opponent SURVIVES
     // (defend returns true to denote successful defense)
-    if(opponent.defend(challenger.performAttack())) {
-      printer.multiline(
-        "", // Add space before
-        "The wild %s manages to survive the blow!",
-        "It counter-attacks!"
-      )
-      .print(opponent.getSpecies());
+    while(!opponent.isHealthZero() && !challenger.isHealthZero()) {
 
-      //Prompt.fakeWait(3);
-
-      // The player defends against the wild attack
-      // The if is true the player SURVIVES
-      if(challenger.defend(opponent.performAttack())) {
+      if (opponent.defend(challenger.performAttack())) {
         printer.multiline(
-          "", //Add space before
-          "%s survives the blow!"
-        )
-        .print(challenger.getName());
+                        "", // Add space before
+                        "The wild %s manages to survive the blow!",
+                        "It counter-attacks!"
+                )
+                .print(opponent.getSpecies());
+
+        //Prompt.fakeWait(3);
+
+        // The player defends against the wild attack
+        // The if is true the player SURVIVES
+        if (challenger.defend(opponent.performAttack())) {
+          printer.multiline(
+                          "", //Add space before
+                          "%s survives the blow!"
+                  )
+                  .print(challenger.getName());
+        } else {
+          challenger.setStatus(CollectieStatus.UNCONSCIOUS);
+          printer.multiline(
+                          "", //Add space before
+                          "%s has fallen and is unconscious!"
+                  )
+                  .print(challenger.getName());
+        }
+
+        // Regardless of surviving the counter attack
+        // if the wild Collectie survives the player lost
+        return false;
       } else {
-        challenger.setStatus(CollectieStatus.UNCONSCIOUS);
-        printer.multiline(
-          "", //Add space before
-          "%s has fallen and is unconscious!"
-        )
-        .print(challenger.getName());
+
+        // This is the branch where the player's attack lands
+        printer.print(
+                "%s knocks out the wild %s!",
+                challenger.getName(),
+                opponent.getSpecies());
+
+        return true;
       }
-
-      // Regardless of surviving the counter attack
-      // if the wild Collectie survives the player lost
-      return false;
-    } else {
-
-      // This is the branch where the player's attack lands
-      printer.print(
-        "%s knocks out the wild %s!",
-        challenger.getName(),
-        opponent.getSpecies());
-
-      return true;
     }
   }
 

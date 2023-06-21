@@ -101,14 +101,14 @@ public abstract class Collectie {
   private CollectieStatus status;
 
   //Improved Combat field
-  private static int hp = 100;
+  private int hp;
 
   //Improved Combat methods
-  public static boolean isHealthZero() {
+  public  boolean isHealthZero() {
     return (hp <= 0);
   }
 
-  public static boolean subtractHealth(int damage){
+  public  boolean subtractHealth(int damage){
     hp-= damage;
     return isHealthZero();
   }

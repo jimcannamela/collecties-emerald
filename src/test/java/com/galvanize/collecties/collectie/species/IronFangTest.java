@@ -69,4 +69,11 @@ void setUp() {fangy = new IronFang();}
     IronFang clone = fangy.clone();
     assertNotEquals(clone, fangy);
    }
+   @Test
+    void shouldTestIfHPIsZero() {
+    boolean currentHP = fangy.subtractHealth(2);
+
+    assertEquals(false, currentHP);
+   }
+
 }

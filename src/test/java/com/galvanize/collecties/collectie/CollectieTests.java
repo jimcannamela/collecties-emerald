@@ -20,16 +20,6 @@ public class CollectieTests {
     Biome randomBiome = Collectie.getRandomNonEmptyBiome();
     assertNotEquals(0, Collectie.speciesByBiomeReference.get(randomBiome).size());
   }
-  @Test
-  public void shouldCheckIfHealthIsZero() {
-    assertTrue(Collectie.isHealthZero());
-  }
-
-  @Test
-  public void shouldSubtractHealth() {
-    assertTrue(Collectie.subtractHealth(1));
-
-  }
 
 
 }

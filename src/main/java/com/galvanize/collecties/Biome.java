@@ -12,9 +12,10 @@ public enum Biome {
   OCEANIC,
   BEACH,
   MOUNTAIN_RANGE,
+  VOLCANIC,
   JUNGLE,
-  SHADOW_DIMENSION,
-  VOLCANIC;
+  SHADOW_DIMENSION;
+
 
   // Create a static array of all the Biomes
   private static final Biome[] biomesArray = Biome.values();

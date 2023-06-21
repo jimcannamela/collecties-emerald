@@ -51,14 +51,14 @@ public class GameTests {
     public void canRenameCollectie() {
         String output = runGameWithInput("n", "3", "4", "1", "Rexter", "y", "1", "6", "4");
         displayOutputLines(output);
-        Assertions.assertEquals("[1] Rexter (Rextore)", output.split("\\r?\\n")[34]);
+        Assertions.assertEquals("[1] Rexter (Rextore) ", output.split("\\r?\\n")[34]);
     }
 
     @Test
     public void canRenameCollectieNotHappyWithName() {
         String output = runGameWithInput("n", "3", "4", "1", "Rexter", "n", "Rexy", "y", "1", "6", "4");
         displayOutputLines(output);
-        Assertions.assertEquals("[1] Rexy (Rextore)", output.split("\\r?\\n")[37]);
+        Assertions.assertEquals("[1] Rexy (Rextore) ", output.split("\\r?\\n")[37]);
     }
 
     @Test
@@ -165,8 +165,8 @@ public class GameTests {
         // 51 - our Rextore misses
         // 1 - other Rextore hits
         // 51 - Exploring finds item
-        // 8 - Finds RedDodud
-        hookIntoRandom(11, 10001, 1, 0, 10002, 51, 1, 51, 8);
+        // 0 - Finds RedDodud
+        hookIntoRandom(11, 10001, 1, 0, 10002, 51, 1, 51, 0);
         disableGameSleep();
         String output = runGameWithInput("n", "2", "1","2","3","3","1","1","6","4");
         enableGameSleep();
@@ -183,8 +183,8 @@ public class GameTests {
         // 51 - our Rextore misses
         // 51 - other Rextore misses
         // 51 - Exploring finds item
-        // 8 - Finds RedDodud
-        hookIntoRandom(11, 10001, 1, 0, 10002, 51, 51, 51, 8);
+        // 0 - Finds RedDodud   - only 2 items in VOLCANIC
+        hookIntoRandom(11, 10001, 1, 0, 10002, 51, 51, 51, 0);
         disableGameSleep();
         String output = runGameWithInput("n", "2", "1","2","3","3","1","1","6","4");
         enableGameSleep();

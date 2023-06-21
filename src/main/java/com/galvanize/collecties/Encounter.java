@@ -1,6 +1,7 @@
 package com.galvanize.collecties;
 
 import com.galvanize.collecties.collectie.Collectie;
+import com.galvanize.collecties.collectie.CollectieStatus;
 import com.galvanize.collecties.utils.terminal.Printer;
 import com.galvanize.collecties.utils.terminal.Prompt;
 
@@ -64,10 +65,16 @@ public class Encounter {
     // If the player chooses to attack, do a skirmish
     // otherwise cheese it
     if (prompt.getChoice(battleChoices.length) == 1) {
-
+      if (challenger.getStatus() == CollectieStatus.UNCONSCIOUS) {
+        printer.multiline(
+                "", // Add space before
+                "Your protector is unconscious so you GTFO!!"
+        ).print();
+        return false;
+      }
       // skirmish returns true if the player wins
       if (skirmish()) {
-        printer.multiline(
+          printer.multiline(
           "", // Add space before
           "Would you like to capture the wild %s?"
         )
@@ -89,6 +96,7 @@ public class Encounter {
       //if run then opponent perform attack at math.random percent
 
     }
+
 
     // If you loose (or run) you cannot keep the wild Collectie
     // So false is returned for those cases
@@ -131,10 +139,10 @@ public class Encounter {
         )
         .print(challenger.getName());
       } else {
-
+        challenger.setStatus(CollectieStatus.UNCONSCIOUS);
         printer.multiline(
           "", //Add space before
-          "%s has fallen!"
+          "%s has fallen and is unconscious!"
         )
         .print(challenger.getName());
       }

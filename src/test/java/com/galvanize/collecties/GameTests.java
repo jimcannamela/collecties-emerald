@@ -189,8 +189,8 @@ public class GameTests {
         String output = runGameWithInput("n", "2", "1","2","3","3","1","1","6","5");
         enableGameSleep();
         displayOutputLines(output);
-        Assertions.assertEquals("You gave Rextore 10001 the RedDodud Sugar Free.", output.split("\\r?\\n")[81]);
-        Assertions.assertEquals("Rextore 10001 has been revived!", output.split("\\r?\\n")[82]);
+        Assertions.assertEquals("You gave Rextore 10001 the RedDodud Sugar Free.", output.split("\\r?\\n")[84]);
+        Assertions.assertEquals("Rextore 10001 has been revived!", output.split("\\r?\\n")[85]);
     }
     @Test
     public void usingRedDodudOnConsciousCollectieGivesMessage(){
@@ -208,7 +208,7 @@ public class GameTests {
         String output = runGameWithInput("n", "2", "1","2","3","3","1","1","6","5");
         enableGameSleep();
         displayOutputLines(output);
-        Assertions.assertEquals("You gave Rextore 10001 the RedDodud Sugar Free.", output.split("\\r?\\n")[81]);
-        Assertions.assertEquals("However, Rextore 10001 was already conscious, so nothing happened!", output.split("\\r?\\n")[82]);
+        Assertions.assertEquals("You gave Rextore 10001 the RedDodud Sugar Free.", output.split("\\r?\\n")[84]);
+        Assertions.assertEquals("However, Rextore 10001 was already conscious, so nothing happened!", output.split("\\r?\\n")[85]);
     }
 }

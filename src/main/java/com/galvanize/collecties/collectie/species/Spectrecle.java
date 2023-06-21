@@ -6,7 +6,7 @@ import com.galvanize.collecties.collectie.Collectie;
 import com.galvanize.collecties.collectie.CollectieType;
 public class Spectrecle extends Collectie{
     public Spectrecle() {
-        super(CollectieType.GHOST, "BOOOOOOO");
+        super(CollectieType.GHOST, "BOOOOOOO", 100);
     }
 
     public String getGraphic() {

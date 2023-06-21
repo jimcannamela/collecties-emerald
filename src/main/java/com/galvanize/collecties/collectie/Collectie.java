@@ -100,6 +100,19 @@ public abstract class Collectie {
   private final String sound;
   private CollectieStatus status;
 
+  //Improved Combat field
+  private static int hp = 100;
+
+  //Improved Combat methods
+  public static boolean isHealthZero() {
+    return (hp <= 0);
+  }
+
+  public static boolean subtractHealth(int damage){
+    hp-= damage;
+    return isHealthZero();
+  }
+
   public CollectieStatus getStatus() {
     return status;
   }
@@ -120,11 +133,12 @@ public abstract class Collectie {
    * Basic constructor except all Collecties start with a
    * random name
    */
-  public Collectie(CollectieType type, String sound) {
+  public Collectie(CollectieType type, String sound, int hp) {
     this.name = this.getSpecies() + " " + Game.randogen.nextInt();
     this.type = type;
     this.sound = sound;
     this.status = CollectieStatus.CONSCIOUS;
+    this.hp = hp;
   }
 
   /*

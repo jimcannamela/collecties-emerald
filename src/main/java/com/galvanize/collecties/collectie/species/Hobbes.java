@@ -8,7 +8,7 @@ import com.galvanize.collecties.collectie.CollectieType;
 public class Hobbes extends Collectie {
 
     public Hobbes() {
-        super(CollectieType.HOMICIDAL_JUNGLE_CAT, "Yukon-Ho");
+        super(CollectieType.HOMICIDAL_JUNGLE_CAT, "Yukon-Ho", 100);
 }
 
     @Override

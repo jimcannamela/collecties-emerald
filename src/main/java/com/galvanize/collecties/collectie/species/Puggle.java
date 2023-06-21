@@ -6,7 +6,7 @@ import com.galvanize.collecties.collectie.Collectie;
 import com.galvanize.collecties.collectie.CollectieType;
 public class Puggle extends Collectie{
     public Puggle() {
-        super(CollectieType.ELEMENTAL, "Bark");
+        super(CollectieType.ELEMENTAL, "Bark", 100);
     }
 
     public String getGraphic() {

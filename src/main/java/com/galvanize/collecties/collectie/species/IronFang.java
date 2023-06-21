@@ -7,7 +7,7 @@ public class IronFang extends Collectie {
 
     String name;
 
-    public IronFang() {super(CollectieType.FAIRY, "BIDOOOOOOOF");}
+    public IronFang() {super(CollectieType.FAIRY, "BIDOOOOOOOF", 100);}
 
     public void setNewName(String name) {
         this.name = name;

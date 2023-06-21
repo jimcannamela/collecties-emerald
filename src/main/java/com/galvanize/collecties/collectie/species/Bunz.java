@@ -8,7 +8,7 @@ import com.galvanize.collecties.collectie.CollectieType;
 public class Bunz extends Collectie {
 
     public Bunz() {
-        super(CollectieType.SNACK, "NO SAUERKRAUT");
+        super(CollectieType.SNACK, "NO SAUERKRAUT", 100);
     }
 
     @Override

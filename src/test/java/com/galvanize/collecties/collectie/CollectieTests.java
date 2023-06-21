@@ -4,8 +4,7 @@ import com.galvanize.collecties.Biome;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("Collectie Base Class")
 public class CollectieTests {
@@ -21,4 +20,16 @@ public class CollectieTests {
     Biome randomBiome = Collectie.getRandomNonEmptyBiome();
     assertNotEquals(0, Collectie.speciesByBiomeReference.get(randomBiome).size());
   }
+  @Test
+  public void shouldCheckIfHealthIsZero() {
+    assertTrue(Collectie.isHealthZero());
+  }
+
+  @Test
+  public void shouldSubtractHealth() {
+    assertTrue(Collectie.subtractHealth(1));
+
+  }
+
+
 }

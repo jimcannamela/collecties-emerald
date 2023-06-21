@@ -8,7 +8,7 @@ import com.galvanize.collecties.collectie.CollectieType;
 public class Rextore extends Collectie {
 
   public Rextore() {
-    super(CollectieType.DINOSAUR, "rarwar");
+    super(CollectieType.DINOSAUR, "rarwar", 100);
   }
 
   public String getGraphic() {

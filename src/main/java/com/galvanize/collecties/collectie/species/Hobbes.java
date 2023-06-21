@@ -41,6 +41,11 @@ public class Hobbes extends Collectie {
     }
 
     @Override
+    public String getInfo() {
+        return "Hobbes: A charismatic and agile combatant, bringing the mischievous yet loyal nature of a true friend into battle.";
+    }
+
+    @Override
     public Hobbes clone() {
         return new Hobbes();
     }

@@ -76,6 +76,6 @@ public class SharkTests {
 
     @Test
     public void getInfo() {
-        assertEquals(shark.getInfo(), "Shark: A sleek and ruthless aquatic predator, swiftly navigating through battlefields with its razor-like teeth and unrelenting aggression.");
+        assertEquals(shark.getInfo(), "Baby Shark, do do dodo do do, Baby Shark, do do dodo do do, Baby SHARK!");
     }
 }

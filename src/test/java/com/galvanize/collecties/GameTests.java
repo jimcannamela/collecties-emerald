@@ -24,18 +24,18 @@ public class GameTests {
 
     @Test
     public void canExitGame() {
-        String input = "n\n4\n";
+        String input = "n\n5\n";
         disableGameSleep();
         String output = runGameWithInput(input);
         enableGameSleep();
         System.out.println(output);
         displayOutputLines(output);
-        Assertions.assertEquals("?: Thank you for playing!", output.split("\\r?\\n")[13]);
+        Assertions.assertEquals("?: Thank you for playing!", output.split("\\r?\\n")[14]);
     }
 
     @Test
     public void showCollectionThenExit() {
-        List<String> gameInput = new ArrayList<>(Arrays.asList("n", "3", "1", "6", "4"));
+        List<String> gameInput = new ArrayList<>(Arrays.asList("n", "3", "1", "6", "5"));
         String output = runGameWithInput(gameInput);
         System.out.println(output);
         Assertions.assertTrue(output.contains("Collectie Collection"));
@@ -46,35 +46,35 @@ public class GameTests {
         List<String> gameInput = new ArrayList<>(Arrays.asList("n", "4", "1","5"));
         String output = runGameWithInput(gameInput);
         System.out.println(output);
-        Assertions.assertTrue(output.contains("Rextore enjoys long walks on the beach after a bountiful feast of Dodud filets"));
+        Assertions.assertTrue(output.contains("Rextore: A Jurrasic era reincarnation, he enjoys long walks on the beach with Mrs. Rextore after a bountiful feast of Dodud filets"));
     }
 
     @Test
     public void showNoConsumablesOnGameStartThenExit() {
-        String output = runGameWithInput("n", "3", "2", "6", "4");
+        String output = runGameWithInput("n", "3", "2", "6", "5");
         System.out.println(output);
         Assertions.assertTrue(output.contains("No consumables available"));
     }
 
     @Test
     public void canRenameCollectie() {
-        String output = runGameWithInput("n", "3", "4", "1", "Rexter", "y", "1", "6", "4");
+        String output = runGameWithInput("n", "3", "4", "1", "Rexter", "y", "1", "6", "5");
         displayOutputLines(output);
-        Assertions.assertEquals("[1] Rexter (Rextore) ", output.split("\\r?\\n")[34]);
+        Assertions.assertEquals("[1] Rexter (Rextore) ", output.split("\\r?\\n")[35]);
     }
 
     @Test
     public void canRenameCollectieNotHappyWithName() {
-        String output = runGameWithInput("n", "3", "4", "1", "Rexter", "n", "Rexy", "y", "1", "6", "4");
+        String output = runGameWithInput("n", "3", "4", "1", "Rexter", "n", "Rexy", "y", "1", "6", "5");
         displayOutputLines(output);
-        Assertions.assertEquals("[1] Rexy (Rextore) ", output.split("\\r?\\n")[37]);
+        Assertions.assertEquals("[1] Rexy (Rextore) ", output.split("\\r?\\n")[38]);
     }
 
     @Test
     public void attemptToFeedCollectieWithNoConsumables() {
-        String output = runGameWithInput("y", "Rextor", "y", "3", "3", "1", "6", "4");
+        String output = runGameWithInput("y", "Rextor", "y", "3", "3", "1", "6", "5");
         displayOutputLines(output);
-        Assertions.assertEquals("?: You have no consumables to feed Rextor!", output.split("\\r?\\n")[26]);
+        Assertions.assertEquals("?: You have no consumables to feed Rextor!", output.split("\\r?\\n")[27]);
     }
 
     @Test
@@ -87,10 +87,10 @@ public class GameTests {
         List<Integer> numberSequence = new ArrayList<>(Arrays.asList(4, 10001, 51, 0));
         hookIntoRandom(numberSequence);
         disableGameSleep();
-        String output = runGameWithInput("n", "2", "4");
+        String output = runGameWithInput("n", "2", "5");
         enableGameSleep();
         displayOutputLines(output);
-        Assertions.assertEquals("You found a Rextore Claws Energy Drink while exploring.", output.split("\\r?\\n")[14]);
+        Assertions.assertEquals("You found a Rextore Claws Energy Drink while exploring.", output.split("\\r?\\n")[15]);
     }
 
     @Test
@@ -103,10 +103,10 @@ public class GameTests {
         // 11 - Roll below 50 for Rextor to win
         hookIntoRandom(11, 10001, 1, 0, 10002, 11);
         disableGameSleep();
-        String output = runGameWithInput("n", "2", "1", "n", "4");
+        String output = runGameWithInput("n", "2", "1", "n", "5");
         enableGameSleep();
         displayOutputLines(output);
-        Assertions.assertEquals("Would you like to capture the wild Rextore?", output.split("\\r?\\n")[50]);
+        Assertions.assertEquals("Would you like to capture the wild Rextore?", output.split("\\r?\\n")[51]);
     }
 
     @Test
@@ -120,11 +120,11 @@ public class GameTests {
         // 51 - other Rextore misses
         hookIntoRandom(11, 10001, 1, 0, 10002, 51, 51);
         disableGameSleep();
-        String output = runGameWithInput("n", "2", "1", "4");
+        String output = runGameWithInput("n", "2", "1", "5");
         enableGameSleep();
         displayOutputLines(output);
-        Assertions.assertEquals("The wild Rextore manages to survive the blow!", output.split("\\r?\\n")[49]);
-        Assertions.assertEquals("Rextore 10001 survives the blow!", output.split("\\r?\\n")[52]);
+        Assertions.assertEquals("The wild Rextore manages to survive the blow!", output.split("\\r?\\n")[50]);
+        Assertions.assertEquals("Rextore 10001 survives the blow!", output.split("\\r?\\n")[53]);
     }
 
     @Test
@@ -138,12 +138,12 @@ public class GameTests {
         // 1 - other Rextore hits
         hookIntoRandom(11, 10001, 1, 0, 10002, 51, 1);
         disableGameSleep();
-        String output = runGameWithInput("n", "2", "1","3","1","6","4");
+        String output = runGameWithInput("n", "2", "1","3","1","6","5");
         enableGameSleep();
         displayOutputLines(output);
-        Assertions.assertEquals("The wild Rextore manages to survive the blow!", output.split("\\r?\\n")[49]);
-        Assertions.assertEquals("Rextore 10001 has fallen and is unconscious!", output.split("\\r?\\n")[52]);
-        Assertions.assertEquals("[1] Rextore 10001 (Rextore) [UNCONSCIOUS]", output.split("\\r?\\n")[67]);
+        Assertions.assertEquals("The wild Rextore manages to survive the blow!", output.split("\\r?\\n")[50]);
+        Assertions.assertEquals("Rextore 10001 has fallen and is unconscious!", output.split("\\r?\\n")[53]);
+        Assertions.assertEquals("[1] Rextore 10001 (Rextore) [UNCONSCIOUS]", output.split("\\r?\\n")[69]);
     }
     @Test
     public void fightWhileProtectorUnconsciousRuns(){
@@ -159,10 +159,10 @@ public class GameTests {
         // 10003 - Random number given to cloned Collectie
         hookIntoRandom(11, 10001, 1, 0, 10002, 51, 1, 1, 0, 10003);
         disableGameSleep();
-        String output = runGameWithInput("n", "2", "1","2","1","4");
+        String output = runGameWithInput("n", "2", "1","2","1","5");
         enableGameSleep();
         displayOutputLines(output);
-        Assertions.assertEquals("Your protector is unconscious so you GTFO!!", output.split("\\r?\\n")[93]);
+        Assertions.assertEquals("Your protector is unconscious so you GTFO!!", output.split("\\r?\\n")[95]);
     }
     @Test
     public void usingRedDodudRevivesCollectie(){
@@ -177,10 +177,10 @@ public class GameTests {
         // 0 - Finds RedDodud
         hookIntoRandom(11, 10001, 1, 0, 10002, 51, 1, 51, 0);
         disableGameSleep();
-        String output = runGameWithInput("n", "2", "1","2","3","3","1","1","6","4");
+        String output = runGameWithInput("n", "2", "1","2","3","3","1","1","6","5");
         enableGameSleep();
         displayOutputLines(output);
-        Assertions.assertEquals("You used the RedDodud and revived the Collectie", output.split("\\r?\\n")[81]);
+        Assertions.assertEquals("You used the RedDodud and revived the Collectie", output.split("\\r?\\n")[84]);
     }
     @Test
     public void usingRedDodudOnConsciousCollectieGivesMessage(){
@@ -195,9 +195,9 @@ public class GameTests {
         // 0 - Finds RedDodud   - only 2 items in VOLCANIC
         hookIntoRandom(11, 10001, 1, 0, 10002, 51, 51, 51, 0);
         disableGameSleep();
-        String output = runGameWithInput("n", "2", "1","2","3","3","1","1","6","4");
+        String output = runGameWithInput("n", "2", "1","2","3","3","1","1","6","5");
         enableGameSleep();
         displayOutputLines(output);
-        Assertions.assertEquals("You used the RedDodud, but your Collectie was already conscious", output.split("\\r?\\n")[81]);
+        Assertions.assertEquals("You used the RedDodud, but your Collectie was already conscious", output.split("\\r?\\n")[84]);
     }
 }

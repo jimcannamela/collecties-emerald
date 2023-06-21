@@ -31,7 +31,10 @@ public class Collectidex {
         if(choice == speciesMenuItems.length) return speciesMenuItems;
         String choosenCollectie = speciesMenuItems[choice - 1];
         printer.print(printCollectieInformation(CollectieSpecies.valueOf(choosenCollectie).getReference()));
-    return speciesMenuItems;
+        printer.print(
+                "Would you like to view another collectie?");
+        if(prompt.getYesNo()) getSpeciesMenuItems();
+        return speciesMenuItems;
     }
     public String printCollectieInformation(Collectie collectie) {
         return collectie.getInfo();

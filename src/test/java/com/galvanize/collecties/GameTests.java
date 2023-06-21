@@ -42,11 +42,20 @@ public class GameTests {
     }
 
     @Test
-    public void getCollectidexMenu(){
-        List<String> gameInput = new ArrayList<>(Arrays.asList("n", "4", "1","5"));
+    public void getCollectidexMenuOnce(){
+        List<String> gameInput = new ArrayList<>(Arrays.asList("n", "4", "1", "n", "5"));
         String output = runGameWithInput(gameInput);
         System.out.println(output);
         Assertions.assertTrue(output.contains("Rextore: A Jurrasic era reincarnation, he enjoys long walks on the beach with Mrs. Rextore after a bountiful feast of Dodud filets"));
+    }
+
+    @Test
+    public void getCollectidexMenuMultiple(){
+        List<String> gameInput = new ArrayList<>(Arrays.asList("n", "4", "1", "y", "3", "n", "5"));
+        String output = runGameWithInput(gameInput);
+        System.out.println(output);
+        Assertions.assertTrue(output.contains("Rextore: A Jurrasic era reincarnation, he enjoys long walks on the beach with Mrs. Rextore after a bountiful feast of Dodud filets"));
+        Assertions.assertTrue(output.contains("Dodud: A quirky and delicious creature with an tasty disposition, skilled at releasing methane gas into the upper stratosphere."));
     }
 
     @Test

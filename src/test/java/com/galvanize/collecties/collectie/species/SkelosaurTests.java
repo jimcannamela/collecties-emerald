@@ -74,4 +74,9 @@ public class SkelosaurTests {
         Skelosaur clone = skelly.clone();
         assertNotEquals(clone, skelly);
     }
+
+    @Test
+    public void getInfo() {
+        assertEquals(skelly.getInfo(), "Skelosaur: Known to the natives as 'Shikaka', this Great White Bat is the sacred animal of the Wachati tribe, while also detested as a 'Winged Spawn of SATAN' by renown Pet Detective Ace Ventura");
+    }
 }

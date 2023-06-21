@@ -76,4 +76,9 @@ public class BunzTests {
         Bunz clone = testDog.clone();
         assertNotEquals(clone, testDog);
     }
+
+    @Test
+    public void getInfo() {
+        assertEquals(testDog.getInfo(), "Bunz: A fiery and fearsome entity, embodying the essence of a hotdog with a passion for highly-processed meat-based combat");
+    }
 }

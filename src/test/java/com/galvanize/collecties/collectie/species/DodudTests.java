@@ -70,4 +70,9 @@ public class DodudTests {
     Dodud clone = duddy.clone();
     assertNotEquals(clone, duddy);
   }
+
+  @Test
+  public void getInfo() {
+    assertEquals(duddy.getInfo(), "Dodud: A quirky and delicious creature with an tasty disposition, skilled at releasing methane gas into the upper stratosphere.");
+  }
 }

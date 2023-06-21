@@ -129,9 +129,42 @@ public class Encounter {
                         "It counter-attacks!"
                 )
                 .print(opponent.getSpecies());
-
+      } else {
+        opponent.subtractHealth(challenger.performAttack());
         //Prompt.fakeWait(3);
+        printer.multiline("%s opponent current health").print(opponent.getHp());
+      }
+      if (opponent.isHealthZero()) {
+        challenger.setStatus(CollectieStatus.UNCONSCIOUS);
+        printer.multiline(
+                        "", //Add space before
+                        "%s has fallen and is unconscious!"
+                )
+                .print(challenger.getName());
 
+        return true;
+      }
+      if (challenger.defend(opponent.performAttack())) {
+        printer.multiline(
+                        "", // Add space before
+                        "The wild %s manages to survive the blow!",
+                        "It counter-attacks!"
+                )
+                .print(challenger.getSpecies());
+      } else {
+        challenger.subtractHealth(opponent.performAttack());
+        //Prompt.fakeWait(3);
+      }
+      if (challenger.isHealthZero()) {
+        opponent.setStatus(CollectieStatus.UNCONSCIOUS);
+        printer.multiline(
+                        "", //Add space before
+                        "%s has fallen and is unconscious!"
+                )
+                .print(opponent.getName());
+
+        return false;
+      }
         // The player defends against the wild attack
         // The if is true the player SURVIVES
         if (challenger.defend(opponent.performAttack())) {
@@ -144,25 +177,18 @@ public class Encounter {
           challenger.setStatus(CollectieStatus.UNCONSCIOUS);
           printer.multiline(
                           "", //Add space before
-                          "%s has fallen and is unconscious!"
+                          "%s has fallen and is unconscious!",
+                          "%s challenger current health"
                   )
-                  .print(challenger.getName());
+                  .print(challenger.getName(), challenger.getHp());
+
         }
 
         // Regardless of surviving the counter attack
         // if the wild Collectie survives the player lost
-        return false;
-      } else {
 
-        // This is the branch where the player's attack lands
-        printer.print(
-                "%s knocks out the wild %s!",
-                challenger.getName(),
-                opponent.getSpecies());
-
-        return true;
       }
-    }
+        return true;
   }
 
   /*

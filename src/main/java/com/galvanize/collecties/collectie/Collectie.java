@@ -100,6 +100,10 @@ public abstract class Collectie {
   private final String sound;
   private CollectieStatus status;
 
+  public int getHp() {
+    return hp;
+  }
+
   //Improved Combat field
   private int hp;
 

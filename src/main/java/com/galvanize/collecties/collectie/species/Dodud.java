@@ -6,7 +6,7 @@ import com.galvanize.collecties.collectie.CollectieType;
 public class Dodud extends Collectie {
 
   public Dodud() {
-    super(CollectieType.SPECIAL, "doooooo-up", 100);
+    super(CollectieType.SPECIAL, "doooooo-up", 10);
   }
 
   @Override

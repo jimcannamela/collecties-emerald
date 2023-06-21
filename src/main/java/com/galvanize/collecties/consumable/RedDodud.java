@@ -21,4 +21,9 @@ public class RedDodud implements Consumable {
     public Biome getContainingBiome() {
         return Biome.VOLCANIC;
     }
+
+    @Override
+    public boolean isRevivalItem(){
+        return true;
+    }
 }

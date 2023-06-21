@@ -1,5 +1,7 @@
 package com.galvanize.collecties.consumable;
 
+import com.galvanize.collecties.Biome;
+
 public class Ribs implements Consumable{
     private int ribs = 7;
 
@@ -21,5 +23,10 @@ public class Ribs implements Consumable{
     @Override
     public Consumable clone() {
         return new Ribs();
+    }
+
+    @Override
+    public Biome getContainingBiome() {
+        return Biome.TAIGA;
     }
 }

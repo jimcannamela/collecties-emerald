@@ -1,5 +1,7 @@
 package com.galvanize.collecties.consumable;
 
+import com.galvanize.collecties.Biome;
+
 public class Pizza implements Consumable {
 
   private int slices = 4;
@@ -23,4 +25,9 @@ public class Pizza implements Consumable {
   public Consumable clone() {
     return new Pizza();
   }
+
+    @Override
+    public Biome getContainingBiome() {
+        return Biome.RAINFOREST;
+    }
 }

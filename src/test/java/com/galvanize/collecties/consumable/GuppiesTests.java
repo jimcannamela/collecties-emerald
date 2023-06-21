@@ -1,5 +1,6 @@
 package com.galvanize.collecties.consumable;
 
+import com.galvanize.collecties.Biome;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -34,6 +35,12 @@ public class GuppiesTests {
 		assertTrue(guppies.getName().contains("(3)"));
 		guppies.consume();
 		assertTrue(guppies.getName().contains("(2)"));
+	}
+
+	@Test
+	public void shouldBeAbleReturnASpecificBiome() {
+		Biome actual = guppies.getContainingBiome();
+		assertEquals(Biome.OCEANIC,actual);
 	}
 }
 

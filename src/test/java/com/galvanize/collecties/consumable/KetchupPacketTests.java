@@ -1,5 +1,6 @@
 package com.galvanize.collecties.consumable;
 
+import com.galvanize.collecties.Biome;
 import com.galvanize.collecties.collectie.species.Bunz;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -29,5 +30,11 @@ public class KetchupPacketTests {
     public void testClone_CreateNewInstanceOfKetchupPacket(){
         Consumable clone = testPacket.clone();
         assertNotEquals(clone, testPacket);
+    }
+
+    @Test
+    public void shouldBeAbleReturnASpecificBiome() {
+        Biome actual = testPacket.getContainingBiome();
+        assertEquals(Biome.BEACH,actual);
     }
 }

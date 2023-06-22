@@ -58,4 +58,9 @@ public class Skelosaur extends Collectie {
         return new Skelosaur();
     }
 
+    @Override
+    public String special() {
+        return null;
+    }
+
 }

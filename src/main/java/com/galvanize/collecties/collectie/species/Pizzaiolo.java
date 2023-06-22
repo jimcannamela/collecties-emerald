@@ -84,4 +84,9 @@ public class Pizzaiolo extends Collectie {
     public Pizzaiolo clone() {
         return new Pizzaiolo();
     }
+
+    @Override
+    public String special() {
+        return null;
+    }
 }

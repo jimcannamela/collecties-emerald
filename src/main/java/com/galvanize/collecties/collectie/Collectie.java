@@ -200,4 +200,5 @@ public abstract class Collectie {
   // Clone should be used to return a new instance of the child class
   // IE myRextore.clone() != myRextore and rexClone is a Rextore instance
   public abstract Collectie clone();
+  public abstract String special();
 }

@@ -43,4 +43,9 @@ public class Puggle extends Collectie{
     public Puggle clone() {
         return new Puggle();
     }
+
+    @Override
+    public String special() {
+        return null;
+    }
 }

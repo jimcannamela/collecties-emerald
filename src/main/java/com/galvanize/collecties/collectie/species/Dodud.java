@@ -42,4 +42,9 @@ public class Dodud extends Collectie {
   public Dodud clone() {
     return new Dodud();
   }
+
+  @Override
+  public String special() {
+    return null;
+  }
 }

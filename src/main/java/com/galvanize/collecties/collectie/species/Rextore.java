@@ -66,4 +66,9 @@ public class Rextore extends Collectie {
   public Rextore clone() {
     return new Rextore();
   }
+
+  @Override
+  public String special() {
+    return null;
+  }
 }

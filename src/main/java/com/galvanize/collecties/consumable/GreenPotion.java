@@ -35,4 +35,5 @@ public class GreenPotion implements Consumable{
     public int hpRecovered() {
         return 75;
     }
+
 }

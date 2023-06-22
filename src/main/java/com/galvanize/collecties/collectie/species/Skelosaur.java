@@ -8,7 +8,7 @@ import com.galvanize.collecties.collectie.CollectieType;
 public class Skelosaur extends Collectie {
 
     public Skelosaur() {
-        super(CollectieType.FIRE, "SKEL SKEL");
+        super(CollectieType.FIRE, "SKEL SKEL", 100);
     }
 
     public String getGraphic() {

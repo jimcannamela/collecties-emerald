@@ -21,4 +21,9 @@ public class CottonCandy implements Consumable{
     public Biome getContainingBiome() {
         return Biome.BOG;
     }
+
+    @Override
+    public int hpRecovered() {
+        return 30;
+    }
 }

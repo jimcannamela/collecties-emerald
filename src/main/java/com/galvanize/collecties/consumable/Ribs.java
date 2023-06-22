@@ -29,4 +29,9 @@ public class Ribs implements Consumable{
     public Biome getContainingBiome() {
         return Biome.TAIGA;
     }
+
+    @Override
+    public int hpRecovered() {
+        return 15;
+    }
 }

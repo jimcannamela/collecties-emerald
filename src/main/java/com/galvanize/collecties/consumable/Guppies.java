@@ -30,4 +30,9 @@ public class Guppies implements Consumable {
     public Biome getContainingBiome() {
         return Biome.OCEANIC;
     }
+
+	@Override
+	public int hpRecovered() {
+		return 10;
+	}
 }

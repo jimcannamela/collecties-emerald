@@ -145,11 +145,12 @@ public class CollectieManager {
             Collectie c = collection.get(i);
 
             printer.print(
-                "[%d] %s (%s) %s",
+                "[%d] %s (%s) %s HP: %s/100",
                 i + 1,
                 c.getName(),
                 c.getSpecies(),
-                c.getStatusString());
+                c.getStatusString(),
+                c.getHp());
         }
     }
 
@@ -237,11 +238,22 @@ public class CollectieManager {
 
         //Prompt.fakeWait(3);
 
+        if(collectieToFeed.getStatus().equals(CollectieStatus.UNCONSCIOUS) && !consumable.isRevivalItem()){
+            printer.print(
+                    "Your %s is unconscious and needs a revival item!",
+                    collectieToFeed.getName());
+        }else{
+            collectieToFeed.setHp(collectieToFeed.getHp() + consumable.hpRecovered());
+            printer.print(
+                    "Your %s gained %s health!",
+                    collectieToFeed.getName(),
+                    consumable.hpRecovered());
+        }
+
         //revive the Collectie if the player uses a revival item
         if (consumable.isRevivalItem()) {
             if (collectieToFeed.getStatus().equals(CollectieStatus.UNCONSCIOUS)) {
                 printer.multiline(
-                        "You gave %s the %s.",
                         "%s has been revived!"
                     )
                     .print(
@@ -262,27 +274,31 @@ public class CollectieManager {
             }
             collectieToFeed.setStatus(CollectieStatus.CONSCIOUS);
         }
-        // Consumable.consume() returns true if the it was finished on that call
-        if (consumable.consume()) {
-            printer.multiline(
-                    "Looks like %s consumed all of the %s.",
-                    "It has been removed from your consumables list."
-                )
-                .print(
-                    collectieToFeed.getName(),
-                    consumable.getName()
-                );
 
-            consumables.remove(consumable);
-        } else {
-            printer.multiline(
-                    "%s could not finish all of the %s.",
-                    "There is some left over for later."
-                )
-                .print(
-                    collectieToFeed.getName(),
-                    consumable.getName()
-                );
+        if(!consumable.isRevivalItem() && collectieToFeed.getStatus().equals(CollectieStatus.CONSCIOUS)){
+            // Consumable.consume() returns true if the it was finished on that call
+            if (consumable.consume()) {
+                printer.multiline(
+                                "Looks like %s consumed all of the %s.",
+                                "It has been removed from your consumables list."
+                        )
+                        .print(
+                                collectieToFeed.getName(),
+                                consumable.getName()
+                        );
+
+                consumables.remove(consumable);
+            } else {
+                printer.multiline(
+                                "%s could not finish all of the %s.",
+                                "There is some left over for later."
+                        )
+                        .print(
+                                collectieToFeed.getName(),
+                                consumable.getName()
+                        );
+            }
         }
+
     }
 }

@@ -120,46 +120,81 @@ public class Encounter {
     // The opponent is defending against the player's attack
     // This if is true if the opponent SURVIVES
     // (defend returns true to denote successful defense)
-    if(opponent.defend(challenger.performAttack())) {
-      printer.multiline(
-        "", // Add space before
-        "The wild %s manages to survive the blow!",
-        "It counter-attacks!"
-      )
-      .print(opponent.getSpecies());
+    while(!opponent.isHealthZero() && !challenger.isHealthZero()) {
 
-      //Prompt.fakeWait(3);
-
-      // The player defends against the wild attack
-      // The if is true the player SURVIVES
-      if(challenger.defend(opponent.performAttack())) {
-        printer.multiline(
-          "", //Add space before
-          "%s survives the blow!"
-        )
-        .print(challenger.getName());
+      if (opponent.defend(challenger.performAttack())) {
+//        printer.multiline(
+//                        "", // Add space before
+//                        "The wild %s manages to protect itself from the blow!",
+//                        "It counter-attacks!"
+//                )
+//                .print(opponent.getSpecies());
       } else {
+        opponent.subtractHealth(challenger.performAttack());
+        //Prompt.fakeWait(3);
+//        printer.multiline("%s opponent health after attack").print(opponent.getHp());
+      }
+      if (opponent.isHealthZero()) {
+        opponent.setStatus(CollectieStatus.UNCONSCIOUS);
+        printer.multiline(
+                        "", //Add space before
+                        "%s has fallen and is unconscious!",
+                        "Your %s won the battle with %s hp left"
+                )
+                .print(opponent.getName(),challenger.getName(),challenger.getHp());
+        opponent.setHp(0);
+
+        return true;
+      }
+      if (challenger.defend(opponent.performAttack())) {
+//        printer.multiline(
+//                        "", // Add space before
+//                        "The wild %s manages to protect itself from the blow!",
+//                        "It counter-attacks!"
+//                )
+//                .print(challenger.getSpecies());
+      } else {
+        challenger.subtractHealth(opponent.performAttack());
+        //Prompt.fakeWait(3);
+//        printer.multiline("%s challenger health after attack").print(challenger.getHp());
+
+      }
+      if (challenger.isHealthZero()) {
         challenger.setStatus(CollectieStatus.UNCONSCIOUS);
         printer.multiline(
-          "", //Add space before
-          "%s has fallen and is unconscious!"
-        )
-        .print(challenger.getName());
+                        "", //Add space before
+                        "%s has fallen and is unconscious!",
+                        "The wild %s won the battle with %s hp left"
+                )
+                .print(challenger.getName(),opponent.getName(),opponent.getHp());
+        challenger.setHp(0);
+
+        return false;
       }
+        // The player defends against the wild attack
+        // The if is true the player SURVIVES
+//        if (challenger.defend(opponent.performAttack())) {
+//          printer.multiline(
+//                          "", //Add space before
+//                          "%s survives the blow!"
+//                  )
+//                  .print(challenger.getName());
+//        } else {
+//          challenger.setStatus(CollectieStatus.UNCONSCIOUS);
+//          printer.multiline(
+//                          "", //Add space before
+//                          "%s has fallen and is unconscious!",
+//                          "%s challenger current health"
+//                  )
+//                  .print(challenger.getName(), challenger.getHp());
+//
+//        }
 
-      // Regardless of surviving the counter attack
-      // if the wild Collectie survives the player lost
-      return false;
-    } else {
+        // Regardless of surviving the counter attack
+        // if the wild Collectie survives the player lost
 
-      // This is the branch where the player's attack lands
-      printer.print(
-        "%s knocks out the wild %s!",
-        challenger.getName(),
-        opponent.getSpecies());
-
-      return true;
-    }
+      }
+        return true;
   }
 
   /*

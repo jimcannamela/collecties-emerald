@@ -23,4 +23,9 @@ public class Cereal implements Consumable {
     public Biome getContainingBiome() {
         return Biome.SAVANNA;
     }
+
+    @Override
+    public int hpRecovered() {
+        return -5;
+    }
 }

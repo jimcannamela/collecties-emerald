@@ -7,7 +7,7 @@ import com.galvanize.collecties.collectie.CollectieType;
 public class Pizzaiolo extends Collectie {
 
     public Pizzaiolo() {
-        super(CollectieType.GHOST, "Ooooo0ooo0oooooo00000oooope");
+        super(CollectieType.GHOST, "Ooooo0ooo0oooooo00000oooope", 100);
     }
 
     public String getGraphic() {

@@ -28,4 +28,9 @@ public class Elixir implements Consumable{
     public Biome getContainingBiome() {
         return Biome.OCEANIC;
     }
+
+    @Override
+    public int hpRecovered() {
+        return 50;
+    }
 }

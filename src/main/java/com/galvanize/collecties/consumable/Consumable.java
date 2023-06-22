@@ -11,6 +11,7 @@ public interface Consumable {
   boolean consume();
   Consumable clone();
   Biome getContainingBiome();
+  default int hpRecovered() {return 0;}
   //if isRevivalItem is set to true, using the item on a
   //Collectie who is unconscious will revive them
   default boolean isRevivalItem(){

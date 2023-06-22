@@ -8,7 +8,7 @@ import com.galvanize.collecties.collectie.CollectieType;
 public class Spurtle extends Collectie {
 
 	public Spurtle() {
-		super(CollectieType.MARINE, "Spurtle-Spurtle");
+		super(CollectieType.MARINE, "Spurtle-Spurtle", 100);
 	}
 
 	@Override

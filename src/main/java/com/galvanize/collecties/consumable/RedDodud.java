@@ -26,4 +26,9 @@ public class RedDodud implements Consumable {
     public boolean isRevivalItem(){
         return true;
     }
+
+    @Override
+    public int hpRecovered() {
+        return 50;
+    }
 }

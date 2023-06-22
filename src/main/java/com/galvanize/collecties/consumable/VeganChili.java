@@ -23,4 +23,9 @@ public class VeganChili implements Consumable {
     public Biome getContainingBiome() {
         return Biome.SHADOW_DIMENSION;
     }
+
+    @Override
+    public int hpRecovered() {
+        return 25;
+    }
 }

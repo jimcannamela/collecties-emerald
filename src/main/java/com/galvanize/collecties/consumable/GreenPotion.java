@@ -30,4 +30,9 @@ public class GreenPotion implements Consumable{
     public Biome getContainingBiome() {
         return Biome.VOLCANIC;
     }
+
+    @Override
+    public int hpRecovered() {
+        return 75;
+    }
 }

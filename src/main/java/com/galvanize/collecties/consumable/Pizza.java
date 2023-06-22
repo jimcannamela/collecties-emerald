@@ -30,4 +30,9 @@ public class Pizza implements Consumable {
     public Biome getContainingBiome() {
         return Biome.RAINFOREST;
     }
+
+  @Override
+  public int hpRecovered() {
+    return 20;
+  }
 }

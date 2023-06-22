@@ -7,7 +7,7 @@ import com.galvanize.collecties.collectie.CollectieType;
 
 public class Shark extends Collectie {
     public Shark() {
-        super(CollectieType.AQUA, "sharrrK");
+        super(CollectieType.AQUA, "sharrrK", 100);
     }
 
     @Override

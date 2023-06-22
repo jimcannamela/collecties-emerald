@@ -22,4 +22,9 @@ public class EnergyDrink implements Consumable {
     public Biome getContainingBiome() {
         return Biome.PLAINS;
     }
+
+  @Override
+  public int hpRecovered() {
+    return 25;
+  }
 }

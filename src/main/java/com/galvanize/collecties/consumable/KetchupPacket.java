@@ -22,4 +22,9 @@ public class KetchupPacket implements Consumable{
     public Biome getContainingBiome() {
         return Biome.BEACH;
     }
+
+    @Override
+    public int hpRecovered() {
+        return 3;
+    }
 }

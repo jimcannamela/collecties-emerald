@@ -73,4 +73,9 @@ public class Spurtle extends Collectie {
 	public Spurtle clone() {
 		return new Spurtle();
 	}
+
+    @Override
+    public String special() {
+        return null;
+    }
 }

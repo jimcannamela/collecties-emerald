@@ -59,4 +59,9 @@ public class Bunz extends Collectie {
     public Bunz clone() {
         return new Bunz();
     }
+
+    @Override
+    public String special() {
+        return null;
+    }
 }

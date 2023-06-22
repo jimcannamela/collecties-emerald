@@ -100,4 +100,9 @@ public class Hobbes extends Collectie {
     public Hobbes clone() {
         return new Hobbes();
     }
+
+    @Override
+    public String special() {
+        return null;
+    }
 }

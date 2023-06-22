@@ -48,4 +48,9 @@ public class IronFang extends Collectie {
     public IronFang clone() {
         return new IronFang();
     }
+
+    @Override
+    public String special() {
+        return null;
+    }
 }

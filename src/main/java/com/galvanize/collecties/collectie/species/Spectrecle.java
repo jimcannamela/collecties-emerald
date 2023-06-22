@@ -43,4 +43,9 @@ public class Spectrecle extends Collectie{
     public Spectrecle clone() {
         return new Spectrecle();
     }
+
+    @Override
+    public String special() {
+        return null;
+    }
 }
